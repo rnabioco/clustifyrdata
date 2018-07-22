@@ -1,21 +1,24 @@
 # clustifyrdata
 external data sets used in vignettes in clustifyr
 
-## datasets
-# pan_indrop : 
+# datasets
+## pan_indrop : Human pancreas scRNAseq data by inDrop protocol, from Baron, M. et al.
+### https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/
 pan_indrop_matrix.rda
 pan_indrop_avg.rda
 pan_indrop_meta.rda
 pan_indrop_vargenes.rda
 pan_indrop_markers.rda
 
-# pan_smartseq2 : 
+## pan_smartseq2 : Human pancreas scRNAseq data by Smart-Seq2 protocol, from Segerstolpe, Å. et al.
+### https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/
 pan_smartseq2_matrix.rda
 pan_smartseq2_avg.rda
 pan_smartseq2_meta.rda
 pan_smartseq2_vargenes.rda
 
-# pbmc4k :
+## pbmc4k : 4k PBMCs from a Healthy Donor
+### https://support.10xgenomics.com/single-cell-gene-expression/datasets/2.1.0/pbmc4k
 pbmc4k_matrix.rda
 pbmc4k_avg.rda
 pbmc4k_meta.rda
@@ -23,11 +26,21 @@ pbmc4k_vargenes.rda
 pbmc4k_markers.rda
 pbmc4k_markers_M3Drop.rda
 
-# pbmc5 : 
+## pbmc5 : PBMCs of a healthy donor - 5' gene expression
+### https://support.10xgenomics.com/single-cell-vdj/datasets/2.1.0/vdj_v1_pbmc_5gex
 pbmc5_matrix.rda
 pbmc5_markers.rda
 pbmc5_meta.rda
 
-# pbmc_bulk_matrix : 
+## pbmc_bulk_matrix : bulk RNA seq expression matrix derived from Recount database
 pbmc_bulk_matrix.rda
 pbmc_pca.rda
+
+# files
+*_matrix : single cell RNA expression matrix
+*_avg : average expression caluculated from single cell RNA expression matrix
+*_meta : metadata from scRNAseq
+*_vargenes : variable genes used for dimension reduction as determined by Seurat default setting
+*_markers : marker genes as determined by Seurat default setting
+*_M3Drop : variable genes used for dimension reduction as determined by M3Drop package
+
