@@ -2,6 +2,13 @@
 external data sets used in vignettes in clustifyr
 
 # datasets
+
+## ref_tabula_muris : Tabula Muris is a compendium of single cell transcriptome data from the model organism Mus musculus
+### https://tabula-muris.ds.czbiohub.org/
+ref_tabula_muris_drop.rda
+
+ref_tabula_muris_facs.rda
+
 ## pan_indrop : Human pancreas scRNAseq data by inDrop protocol, from Baron, M. et al.
 ### https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/
 pan_indrop_matrix.rda

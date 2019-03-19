@@ -108,3 +108,27 @@
 #'
 #' @source ["SRP051688"]
 "pbmc_bulk_matrix"
+
+#' Matrix of average gene expression per cluster from single-cell RNA-seq from Tabula Muris (10x genomics).
+#'
+#' 422,803 droplet libraries, 55,656 of which passed a QC cutoff of 500 genes and 1000 UMI
+#'
+#' @format A sparseMatrix with genes as rows and clusters as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source [https://tabula-muris.ds.czbiohub.org/]
+"ref_tabula_muris_drop"
+
+#' Matrix of average gene expression per cluster from single-cell RNA-seq from Tabula Muris (SMART-Seq2).
+#'
+#' 53,760 cells from 20 tissues from 8 mice
+#'
+#' @format A sparseMatrix with genes as rows and clusters as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source [https://tabula-muris.ds.czbiohub.org/]
+"ref_tabula_muris_facs"
