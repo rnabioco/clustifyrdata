@@ -132,3 +132,15 @@
 #'
 #' @source [https://tabula-muris.ds.czbiohub.org/]
 "ref_tabula_muris_facs"
+
+#' Matrix of average gene expression from GTEx recount bulk RNA seq.
+#'
+#' 53,760 cells from 20 tissues from 8 mice
+#'
+#' @format A read count matrix
+#'
+#' \describe{
+#' }
+#'
+#' @source ["SRP012682"]
+"gtex_bulk_matrix"

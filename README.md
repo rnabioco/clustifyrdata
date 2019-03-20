@@ -9,6 +9,9 @@ ref_tabula_muris_drop.rda
 
 ref_tabula_muris_facs.rda
 
+## gtex_bulk_matrix : bulk RNA seq expression matrix derived from GTEx Recount database
+gtex_bulk_matrix.rda
+
 ## pan_indrop : Human pancreas scRNAseq data by inDrop protocol, from Baron, M. et al.
 ### https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/
 pan_indrop_matrix.rda
