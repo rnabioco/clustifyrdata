@@ -144,3 +144,39 @@
 #'
 #' @source ["SRP012682"]
 "gtex_bulk_matrix"
+
+#' Matrix of average gene expression from immgen data
+#'
+#' 253 mouse immune cell types
+#'
+#' @format A read count matrix
+#'
+#' \describe{
+#' }
+#'
+#' @source ["SingleR"]
+"immgen_ref"
+
+#' Matrix of average gene expression from general mouse cell type data
+#'
+#' 28 general cell types
+#'
+#' @format A read count matrix
+#'
+#' \describe{
+#' }
+#'
+#' @source ["SingleR"]
+"mouse.rnaseq_ref"
+
+#' Matrix of average gene expression from `yan` human embryo data
+#'
+#' 6 early development cell types
+#'
+#' @format A read count matrix
+#'
+#' \describe{
+#' }
+#'
+#' @source ["scmap"]
+"yan_ref"
