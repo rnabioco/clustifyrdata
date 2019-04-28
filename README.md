@@ -61,6 +61,14 @@ pbmc_bulk_matrix.rda
 
 pbmc_pca.rda
 
+## yan : converted from built-in data from `scmap`
+yan_ref.rda
+
+## converted mouse built-in references from `SingleR`
+immgen_ref.rda
+
+mouse.rnaseq_ref.rda
+
 # files
 *_matrix : single cell RNA expression matrix
 
