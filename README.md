@@ -1,5 +1,10 @@
 # clustifyrdata
 
+<!-- badges: start -->
+  [![Travis build status](https://travis-ci.org/rnabioco/clustifyrdata.svg?branch=master)](https://travis-ci.org/rnabioco/clustifyrdata)
+<!-- badges: end -->
+
+
 External data sets used in vignettes in [clustifyr](https://github.com/rnabioco/clustifyr).
 
 ## Installation
