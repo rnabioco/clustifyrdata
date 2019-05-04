@@ -1,7 +1,8 @@
 # clustifyrdata
-external data sets used in vignettes in clustifyr
 
-# datasets
+External data sets used in vignettes in [clustifyr](https://github.com/rnabioco/clustifyr).
+
+## Installation
 
 ## ref_tabula_muris : Tabula Muris is a compendium of single cell transcriptome data from the model organism Mus musculus
 ### https://tabula-muris.ds.czbiohub.org/
