@@ -99,16 +99,6 @@
 #' @source [google.com]
 "pbmc5_markers"
 
-#' Bulk RNA-Seq data from sorted populations isolated from PBMCs.
-#'
-#'
-#' @format A read count matrix with 14 variables:
-#' \describe{
-#' }
-#'
-#' @source ["SRP051688"]
-"pbmc_bulk_matrix"
-
 #' Matrix of average gene expression per cluster from single-cell RNA-seq from Tabula Muris (10x genomics).
 #'
 #' 422,803 droplet libraries, 55,656 of which passed a QC cutoff of 500 genes and 1000 UMI
@@ -180,3 +170,106 @@
 #'
 #' @source ["scmap"]
 "yan_ref"
+
+#' Matrix of single-cell RNA-seq pancreas data using indrop method.
+#'
+#' A sample of 8569 pancreas cells
+#'
+#' @format A sparseMatrix with genes as rows and cells as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_indrop_matrix"
+
+#' Matrix of average gene expression per cluster from single-cell RNA-seq pancreas data using indrop method.
+#'
+#' A sample of 8569 pancreas cells
+#'
+#' @format A sparseMatrix with genes as rows and clusters as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_indrop_avg"
+
+#' Marker genes identified by Seurat from single-cell RNA-seq pancreas data using indrop method.
+#'
+#' A sample of 8569 pancreas cells
+#'
+#' @format A data frame with 7 variables:
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_indrop_markers"
+
+#' Meta-data for single-cell RNA-seq pancreas data using indrop method.
+#'
+#' A sample of 8569 pancreas cells
+#'
+#' @format A data frame with 4 variables:
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_indrop_meta"
+
+#' variable genes identified by Seurat from single-cell RNA-seq pancreas data using indrop method.
+#'
+#' A sample of 8569 pancreas cells
+#'
+#' @format A vector:
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_indrop_vargenes"
+
+#' Matrix of single-cell RNA-seq pancreas data using smartseq2 method.
+#'
+#' A sample of 2209 pancreas cells
+#'
+#' @format A sparseMatrix with genes as rows and cells as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_smartseq2_matrix"
+
+#' Matrix of average gene expression per cluster from single-cell RNA-seq pancreas data using smartseq2 method.
+#'
+#' A sample of 2209 pancreas cells
+#'
+#' @format A sparseMatrix with genes as rows and clusters as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_smartseq2_avg"
+
+#' Meta-data for single-cell RNA-seq pancreas data using smartseq2 method.
+#'
+#' A sample of 2209 pancreas cells
+#'
+#' @format A data frame with 4 variables:
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_smartseq2_meta"
+
+#' variable genes identified by Seurat from single-cell RNA-seq pancreas data using smartseq2 method.
+#'
+#' A sample of 2209 pancreas cells
+#'
+#' @format A vector:
+#' \describe{
+#' }
+#'
+#' @source ["hemberg"]
+"pan_smartseq2_vargenes"

@@ -9,6 +9,14 @@ External data sets used in vignettes in [clustifyr](https://github.com/rnabioco/
 
 ## Installation
 
+``` r
+# install.packages("devtools")
+devtools::install_github("rnabioco/clustifyrdata")
+```
+
+# install.packages("devtools")
+devtools::install_github("rnabioco/clustifyR")
+
 ## ref_tabula_muris : Tabula Muris is a compendium of single cell transcriptome data from the model organism Mus musculus
 ### https://tabula-muris.ds.czbiohub.org/
 ref_tabula_muris_drop.rda
@@ -61,11 +69,6 @@ pbmc5_matrix.rda
 pbmc5_markers.rda
 
 pbmc5_meta.rda
-
-## pbmc_bulk_matrix : bulk RNA seq expression matrix derived from Recount database
-pbmc_bulk_matrix.rda
-
-pbmc_pca.rda
 
 ## yan : converted from built-in data from `scmap`
 yan_ref.rda
