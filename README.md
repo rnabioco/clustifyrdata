@@ -14,14 +14,15 @@ External data sets used in vignettes in [clustifyr](https://github.com/rnabioco/
 devtools::install_github("rnabioco/clustifyrdata")
 ```
 
-# install.packages("devtools")
-devtools::install_github("rnabioco/clustifyR")
-
 ## ref_tabula_muris : Tabula Muris is a compendium of single cell transcriptome data from the model organism Mus musculus
 ### https://tabula-muris.ds.czbiohub.org/
 ref_tabula_muris_drop.rda
 
 ref_tabula_muris_facs.rda
+
+## ref_moca_main : Mouse Organogenesis Cell Atlas main cell types
+### http://atlas.gs.washington.edu/mouse-rna/
+ref_moca_main.rda
 
 ## gtex_bulk_matrix : bulk RNA seq expression matrix derived from GTEx Recount database
 gtex_bulk_matrix.rda

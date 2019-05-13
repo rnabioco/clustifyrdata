@@ -273,3 +273,15 @@
 #'
 #' @source ["hemberg"]
 "pan_smartseq2_vargenes"
+
+#' Matrix of average gene expression per cluster from single-cell sci-RNA-seq3 from Mouse Organogenesis Cell Atlas.
+#'
+#' 100,000 cells
+#'
+#' @format A sparseMatrix with genes as rows and clusters as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source [http://atlas.gs.washington.edu/mouse-rna/]
+"ref_moca_main"
