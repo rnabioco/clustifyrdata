@@ -79,6 +79,9 @@ immgen_ref.rda
 
 mouse.rnaseq_ref.rda
 
+## hema_microarray_matrix : derived from microarray data of purified populations of human hematopoietic cells
+hema_microarray_matrix.rda
+
 # files
 *_matrix : single cell RNA expression matrix
 

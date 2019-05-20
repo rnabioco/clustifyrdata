@@ -285,3 +285,15 @@
 #'
 #' @source [http://atlas.gs.washington.edu/mouse-rna/]
 "ref_moca_main"
+
+#' Matrix of average gene detection by microarray on sorted immune cell populations
+#'
+#' 38 distinct purified populations of human hematopoietic cells
+#'
+#' @format A sparseMatrix with genes as rows and cell types as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE24759]
+"hema_microarray_matrix"
