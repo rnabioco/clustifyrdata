@@ -4,7 +4,7 @@
 \name{gtex_bulk_matrix}
 \alias{gtex_bulk_matrix}
 \title{Matrix of average gene expression from GTEx recount bulk RNA seq.}
-\format{A read count matrix
+\format{A read count average matrix
 
 \describe{
 }}

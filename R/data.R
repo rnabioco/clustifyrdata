@@ -14,7 +14,7 @@
 #'
 #' A sample of 4000 PBMC cells from a bigger experiment
 #'
-#' @format A sparseMatrix with genes as rows and clusters as columns.
+#' @format A matrix with genes as rows and clusters as columns.
 #'
 #' \describe{
 #' }
@@ -103,7 +103,7 @@
 #'
 #' 422,803 droplet libraries, 55,656 of which passed a QC cutoff of 500 genes and 1000 UMI
 #'
-#' @format A sparseMatrix with genes as rows and clusters as columns.
+#' @format A matrix with genes as rows and clusters as columns.
 #'
 #' \describe{
 #' }
@@ -115,7 +115,7 @@
 #'
 #' 53,760 cells from 20 tissues from 8 mice
 #'
-#' @format A sparseMatrix with genes as rows and clusters as columns.
+#' @format A matrix with genes as rows and clusters as columns.
 #'
 #' \describe{
 #' }
@@ -127,7 +127,7 @@
 #'
 #' 53,760 cells from 20 tissues from 8 mice
 #'
-#' @format A read count matrix
+#' @format A read count average matrix
 #'
 #' \describe{
 #' }
@@ -139,7 +139,7 @@
 #'
 #' 253 mouse immune cell types
 #'
-#' @format A read count matrix
+#' @format A read count average matrix
 #'
 #' \describe{
 #' }
@@ -187,7 +187,7 @@
 #'
 #' A sample of 8569 pancreas cells
 #'
-#' @format A sparseMatrix with genes as rows and clusters as columns.
+#' @format A matrix with genes as rows and clusters as columns.
 #'
 #' \describe{
 #' }
@@ -244,7 +244,7 @@
 #'
 #' A sample of 2209 pancreas cells
 #'
-#' @format A sparseMatrix with genes as rows and clusters as columns.
+#' @format A matrix with genes as rows and clusters as columns.
 #'
 #' \describe{
 #' }
@@ -278,7 +278,7 @@
 #'
 #' 100,000 cells
 #'
-#' @format A sparseMatrix with genes as rows and clusters as columns.
+#' @format A matrix with genes as rows and clusters as columns.
 #'
 #' \describe{
 #' }
@@ -297,3 +297,15 @@
 #'
 #' @source [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE24759]
 "hema_microarray_matrix"
+
+#' Matrix of average gene detection on cortex development cell types
+#'
+#' 47 distinct annotated clusters of human neuronal subtypes
+#'
+#' @format A matrix with genes as rows and clusters as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source [https://cells.ucsc.edu/?ds=cortex-dev#]
+"ref_cortex_dev"

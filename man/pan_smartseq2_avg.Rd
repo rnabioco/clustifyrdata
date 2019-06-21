@@ -4,7 +4,7 @@
 \name{pan_smartseq2_avg}
 \alias{pan_smartseq2_avg}
 \title{Matrix of average gene expression per cluster from single-cell RNA-seq pancreas data using smartseq2 method.}
-\format{A sparseMatrix with genes as rows and clusters as columns.
+\format{A matrix with genes as rows and clusters as columns.
 
 \describe{
 }}

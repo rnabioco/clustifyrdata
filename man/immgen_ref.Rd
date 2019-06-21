@@ -4,7 +4,7 @@
 \name{immgen_ref}
 \alias{immgen_ref}
 \title{Matrix of average gene expression from immgen data}
-\format{A read count matrix
+\format{A read count average matrix
 
 \describe{
 }}

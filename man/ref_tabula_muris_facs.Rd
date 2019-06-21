@@ -4,7 +4,7 @@
 \name{ref_tabula_muris_facs}
 \alias{ref_tabula_muris_facs}
 \title{Matrix of average gene expression per cluster from single-cell RNA-seq from Tabula Muris (SMART-Seq2).}
-\format{A sparseMatrix with genes as rows and clusters as columns.
+\format{A matrix with genes as rows and clusters as columns.
 
 \describe{
 }}

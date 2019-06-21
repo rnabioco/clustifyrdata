@@ -4,7 +4,7 @@
 \name{pan_indrop_avg}
 \alias{pan_indrop_avg}
 \title{Matrix of average gene expression per cluster from single-cell RNA-seq pancreas data using indrop method.}
-\format{A sparseMatrix with genes as rows and clusters as columns.
+\format{A matrix with genes as rows and clusters as columns.
 
 \describe{
 }}
