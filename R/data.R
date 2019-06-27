@@ -1,6 +1,6 @@
 #' Matrix of single-cell RNA-seq PBMCs.
 #'
-#' A sample of 4000 PBMC cells from a bigger experiment
+#' A sample of 3k PBMC cells
 #'
 #' @format A sparseMatrix with genes as rows and cells as columns.
 #'
@@ -8,11 +8,11 @@
 #' }
 #'
 #' @source [google.com]
-"pbmc4k_matrix"
+"pbmc_matrix"
 
 #' Matrix of average gene expression per cluster from single-cell RNA-seq PBMCs.
 #'
-#' A sample of 4000 PBMC cells from a bigger experiment
+#' A sample of 3k PBMC cells
 #'
 #' @format A matrix with genes as rows and clusters as columns.
 #'
@@ -20,51 +20,51 @@
 #' }
 #'
 #' @source [google.com]
-"pbmc4k_avg"
+"pbmc_avg"
 
 #' Meta-data for single-cell RNA-seq PBMCs.
 #'
-#' A sample of 4000 cells from a bigger experiment
+#' A sample of 3k cells
 #'
 #' @format A data frame with 5 variables:
 #' \describe{
 #' }
 #'
 #' @source [google.com]
-"pbmc4k_meta"
+"pbmc_meta"
 
 #' Marker genes identified by Seurat from single-cell RNA-seq PBMCs.
 #'
-#' A sample of 4000 cells from a bigger experiment
+#' A sample of 3k cells
 #'
 #' @format A data frame with 7 variables:
 #' \describe{
 #' }
 #'
 #' @source [google.com]
-"pbmc4k_markers"
+"pbmc_markers"
 
 #' Marker genes identified by M3Drop from single-cell RNA-seq PBMCs.
 #'
-#' A sample of 4000 cells from a bigger experiment
+#' A sample of 3k cells
 #'
 #' @format A data frame with 3 variables:
 #' \describe{
 #' }
 #'
 #' @source [google.com]
-"pbmc4k_markers_M3Drop"
+"pbmc_markers_M3Drop"
 
 #' variable genes identified by Seurat from single-cell RNA-seq PBMCs.
 #'
-#' A sample of 4000 cells from a bigger experiment
+#' A sample of 3k cells
 #'
 #' @format A vector:
 #' \describe{
 #' }
 #'
 #' @source [google.com]
-"pbmc4k_vargenes"
+"pbmc_vargenes"
 
 #' Matrix of single-cell RNA-seq PBMCs from 5'end kit.
 #'

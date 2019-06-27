@@ -49,19 +49,19 @@ pan_smartseq2_meta.rda
 
 pan_smartseq2_vargenes.rda
 
-## pbmc4k : 4k PBMCs from a Healthy Donor
+## pbmc : 3k PBMCs from a seurat tutorial
 ### https://support.10xgenomics.com/single-cell-gene-expression/datasets/2.1.0/pbmc4k
-pbmc4k_matrix.rda
+pbmc_matrix.rda
 
-pbmc4k_avg.rda
+pbmc_avg.rda
 
-pbmc4k_meta.rda
+pbmc_meta.rda
 
-pbmc4k_vargenes.rda
+pbmc_vargenes.rda
 
-pbmc4k_markers.rda
+pbmc_markers.rda
 
-pbmc4k_markers_M3Drop.rda
+pbmc_markers_M3Drop.rda
 
 ## pbmc5 : PBMCs of a healthy donor - 5' gene expression
 ### https://support.10xgenomics.com/single-cell-vdj/datasets/2.1.0/vdj_v1_pbmc_5gex
