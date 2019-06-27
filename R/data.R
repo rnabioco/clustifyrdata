@@ -309,3 +309,21 @@
 #'
 #' @source [https://cells.ucsc.edu/?ds=cortex-dev#]
 "ref_cortex_dev"
+
+#' Small clustered Seurat2 object
+#'
+#' @format seurat
+#' \describe{
+#' }
+#'
+#' @source  `[pbmc_small]` processed by `[seurat]`
+"s_small"
+
+#' Small clustered Seurat3 object
+#'
+#' @format Seurat
+#' \describe{
+#' }
+#'
+#' @source  `[pbmc_small]` processed by `[Seurat]`
+"s_small3"
