@@ -327,3 +327,26 @@
 #'
 #' @source  `[pbmc_small]` processed by `[Seurat]`
 "s_small3"
+
+#' Matrix of single-cell RNA-seq cells of the lung.
+#'
+#' A sample of lung cells, from mouse cell atlas project
+#'
+#' @format A sparseMatrix with genes as rows and cells as columns.
+#'
+#' \describe{
+#' }
+#'
+#' @source [google.com]
+"MCA_lung_mat"
+
+#' Meta-data for single-cell RNA-seq of the lung.
+#'
+#' A sample of lung cells, from mouse cell atlas project
+#'
+#' @format A data frame with 5 variables:
+#' \describe{
+#' }
+#'
+#' @source [google.com]
+"MCA_lung_meta"
