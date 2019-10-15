@@ -350,3 +350,14 @@
 #'
 #' @source [google.com]
 "MCA_lung_meta"
+
+#' Matrix of average gene expression for single-cell RNA-seq.
+#'
+#' from mouse cell atlas project
+#'
+#' @format A matrix with genes as rows and cells as columns:
+#' \describe{
+#' }
+#'
+#' @source [google.com]
+"ref_MCA"
