@@ -145,7 +145,7 @@
 #' }
 #'
 #' @source ["SingleR"]
-"immgen_ref"
+"ref_immgen"
 
 #' Matrix of average gene expression from general mouse cell type data
 #'
@@ -157,7 +157,7 @@
 #' }
 #'
 #' @source ["SingleR"]
-"mouse.rnaseq_ref"
+"ref_mouse.rnaseq"
 
 #' Matrix of average gene expression from `yan` human embryo data
 #'
@@ -193,7 +193,7 @@
 #' }
 #'
 #' @source ["hemberg"]
-"pan_indrop_avg"
+"ref_pan_indrop"
 
 #' Marker genes identified by Seurat from single-cell RNA-seq pancreas data using indrop method.
 #'
@@ -250,7 +250,7 @@
 #' }
 #'
 #' @source ["hemberg"]
-"pan_smartseq2_avg"
+"ref_pan_smartseq2"
 
 #' Meta-data for single-cell RNA-seq pancreas data using smartseq2 method.
 #'
@@ -296,7 +296,7 @@
 #' }
 #'
 #' @source [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE24759]
-"hema_microarray_matrix"
+"ref_hema_microarray"
 
 #' Matrix of average gene detection on cortex development cell types
 #'

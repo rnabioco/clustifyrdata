@@ -79,12 +79,12 @@ pbmc5_meta.rda
 yan_ref.rda
 
 ## converted mouse built-in references from `SingleR`
-immgen_ref.rda
+ref_immgen.rda
 
-mouse.rnaseq_ref.rda
+ref_mouse.rnaseq.rda
 
 ## hema_microarray_matrix : derived from microarray data of purified populations of human hematopoietic cells
-hema_microarray_matrix.rda
+ref_hema_microarray.rda
 
 ## ref_cortex_dev : derived from ucsc single cell data of human cortex development
 ref_cortex_dev.rda
