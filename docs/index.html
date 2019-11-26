@@ -9,10 +9,11 @@
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="External data sets for clustifyR">
 <meta property="og:description" content="Provides external single-cell mRNA sequencing data sets
-  for clustifyr (https://github.com/rnabioco/clustifyr)">
+    for use with the clustifyr (https://github.com/rnabioco/clustifyr) 
+    package.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -32,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">clustifyrdata</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.0</span>
       </span>
     </div>
 
@@ -47,8 +48,42 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/benchmark.html">Benchmarking clustifyr</a>
+    </li>
+    <li>
+      <a href="articles/download_refs.html">Prebuilt references for clustifyr</a>
+    </li>
+    <li>
+      <a href="articles/otherformats.html">Support for various single cell object formats</a>
+    </li>
+    <li>
+      <a href="articles/othertools.html">Other considerations w/ clustifyr</a>
+    </li>
+    <li>
+      <a href="articles/references.html">Reference building for clustifyr</a>
+    </li>
+    <li>
+      <a href="articles/visualizations.html">Visualization of clustifyr results</a>
+    </li>
+  </ul>
+</li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/rnabioco/clustifyrdata">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -57,16 +92,31 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="contents col-md-9">
 
 <div id="clustifyrdata" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#clustifyrdata" class="anchor"></a>clustifyrdata</h1></div>
+<!-- badges: start -->
+
 <p>External data sets used in vignettes in <a href="https://github.com/rnabioco/clustifyr">clustifyr</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"rnabioco/clustifyrdata"</span>)</span></code></pre></div>
+</div>
+<div id="ref_mca--mouse-cell-atlas" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ref_mca--mouse-cell-atlas" class="anchor"></a>ref_MCA : mouse cell atlas</h2>
+<div id="httpsfigsharecoms865e694ad06d5857db4b" class="section level3">
+<h3 class="hasAnchor">
+<a href="#httpsfigsharecoms865e694ad06d5857db4b" class="anchor"></a><a href="https://figshare.com/s/865e694ad06d5857db4b" class="uri">https://figshare.com/s/865e694ad06d5857db4b</a>
+</h3>
+<p>ref_MCA.rda</p>
+</div>
 </div>
 <div id="ref_tabula_muris--tabula-muris-is-a-compendium-of-single-cell-transcriptome-data-from-the-model-organism-mus-musculus" class="section level2">
 <h2 class="hasAnchor">
@@ -77,6 +127,16 @@
 </h3>
 <p>ref_tabula_muris_drop.rda</p>
 <p>ref_tabula_muris_facs.rda</p>
+</div>
+</div>
+<div id="ref_moca_main--mouse-organogenesis-cell-atlas-main-cell-types" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ref_moca_main--mouse-organogenesis-cell-atlas-main-cell-types" class="anchor"></a>ref_moca_main : Mouse Organogenesis Cell Atlas main cell types</h2>
+<div id="httpatlasgswashingtonedumouse-rna" class="section level3">
+<h3 class="hasAnchor">
+<a href="#httpatlasgswashingtonedumouse-rna" class="anchor"></a><a href="http://atlas.gs.washington.edu/mouse-rna/" class="uri">http://atlas.gs.washington.edu/mouse-rna/</a>
+</h3>
+<p>ref_moca_main.rda</p>
 </div>
 </div>
 <div id="gtex_bulk_matrix--bulk-rna-seq-expression-matrix-derived-from-gtex-recount-database" class="section level2">
@@ -111,19 +171,19 @@
 <p>pan_smartseq2_vargenes.rda</p>
 </div>
 </div>
-<div id="pbmc4k--4k-pbmcs-from-a-healthy-donor" class="section level2">
+<div id="pbmc--3k-pbmcs-from-a-seurat-tutorial" class="section level2">
 <h2 class="hasAnchor">
-<a href="#pbmc4k--4k-pbmcs-from-a-healthy-donor" class="anchor"></a>pbmc4k : 4k PBMCs from a Healthy Donor</h2>
+<a href="#pbmc--3k-pbmcs-from-a-seurat-tutorial" class="anchor"></a>pbmc : 3k PBMCs from a seurat tutorial</h2>
 <div id="httpssupport10xgenomicscomsingle-cell-gene-expressiondatasets210pbmc4k" class="section level3">
 <h3 class="hasAnchor">
 <a href="#httpssupport10xgenomicscomsingle-cell-gene-expressiondatasets210pbmc4k" class="anchor"></a><a href="https://support.10xgenomics.com/single-cell-gene-expression/datasets/2.1.0/pbmc4k" class="uri">https://support.10xgenomics.com/single-cell-gene-expression/datasets/2.1.0/pbmc4k</a>
 </h3>
-<p>pbmc4k_matrix.rda</p>
-<p>pbmc4k_avg.rda</p>
-<p>pbmc4k_meta.rda</p>
-<p>pbmc4k_vargenes.rda</p>
-<p>pbmc4k_markers.rda</p>
-<p>pbmc4k_markers_M3Drop.rda</p>
+<p>pbmc_matrix.rda</p>
+<p>pbmc_avg.rda</p>
+<p>pbmc_meta.rda</p>
+<p>pbmc_vargenes.rda</p>
+<p>pbmc_markers.rda</p>
+<p>pbmc_markers_M3Drop.rda</p>
 </div>
 </div>
 <div id="pbmc5--pbmcs-of-a-healthy-donor---5-gene-expression" class="section level2">
@@ -138,12 +198,6 @@
 <p>pbmc5_meta.rda</p>
 </div>
 </div>
-<div id="pbmc_bulk_matrix--bulk-rna-seq-expression-matrix-derived-from-recount-database" class="section level2">
-<h2 class="hasAnchor">
-<a href="#pbmc_bulk_matrix--bulk-rna-seq-expression-matrix-derived-from-recount-database" class="anchor"></a>pbmc_bulk_matrix : bulk RNA seq expression matrix derived from Recount database</h2>
-<p>pbmc_bulk_matrix.rda</p>
-<p>pbmc_pca.rda</p>
-</div>
 <div id="yan--converted-from-built-in-data-from-scmap" class="section level2">
 <h2 class="hasAnchor">
 <a href="#yan--converted-from-built-in-data-from-scmap" class="anchor"></a>yan : converted from built-in data from <code>scmap</code>
@@ -154,8 +208,18 @@
 <h2 class="hasAnchor">
 <a href="#converted-mouse-built-in-references-from-singler" class="anchor"></a>converted mouse built-in references from <code>SingleR</code>
 </h2>
-<p>immgen_ref.rda</p>
-<p>mouse.rnaseq_ref.rda</p>
+<p>ref_immgen.rda</p>
+<p>ref_mouse.rnaseq.rda</p>
+</div>
+<div id="hema_microarray_matrix--derived-from-microarray-data-of-purified-populations-of-human-hematopoietic-cells" class="section level2">
+<h2 class="hasAnchor">
+<a href="#hema_microarray_matrix--derived-from-microarray-data-of-purified-populations-of-human-hematopoietic-cells" class="anchor"></a>hema_microarray_matrix : derived from microarray data of purified populations of human hematopoietic cells</h2>
+<p>ref_hema_microarray.rda</p>
+</div>
+<div id="ref_cortex_dev--derived-from-ucsc-single-cell-data-of-human-cortex-development" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ref_cortex_dev--derived-from-ucsc-single-cell-data-of-human-cortex-development" class="anchor"></a>ref_cortex_dev : derived from ucsc single cell data of human cortex development</h2>
+<p>ref_cortex_dev.rda</p>
 </div>
 </div>
 <div id="files" class="section level1">
@@ -172,7 +236,16 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/rnabioco/clustifyrdata">https://​github.com/​rnabioco/​clustifyrdata</a>
+</li>
+<li>clustifyr at <br><a href="http://github.com/rnabioco/clustifyr">http://​github.com/​rnabioco/​clustifyr</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
@@ -182,24 +255,33 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Rui Fu <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<li>Rui Fu <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://travis-ci.org/rnabioco/clustifyrdata"><img src="https://travis-ci.org/rnabioco/clustifyrdata.svg?branch=master" alt="Travis build status"></a></li>
+</ul>
 </div>
+</div>
+</div>
+
 
       <footer><div class="copyright">
   <p>Developed by Rui Fu.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

@@ -1,1 +1,9 @@
 url: https://rnabioco.github.io/clustifyrdata
+
+development:
+  mode: unreleased
+
+home:
+  links:
+  - text: clustifyr
+    href: http://github.com/rnabioco/clustifyr
