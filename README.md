@@ -1,9 +1,9 @@
 # clustifyrdata
 
 <!-- badges: start -->
-  [![Travis build status](https://travis-ci.org/rnabioco/clustifyrdata.svg?branch=master)](https://travis-ci.org/rnabioco/clustifyrdata)
+[![R build status](https://github.com/rnabioco/clustifyrdata/workflows/R-CMD-check/badge.svg)](https://github.com/rnabioco/clustifyrdata/actions)
+[![Codecov test coverage](https://codecov.io/gh/rnabioco/clustifyrdata/branch/master/graph/badge.svg)](https://codecov.io/gh/rnabioco/clustifyrdata?branch=master)
 <!-- badges: end -->
-
 
 External data sets used in vignettes in [clustifyr](https://github.com/rnabioco/clustifyr).
 
