@@ -13,6 +13,8 @@ License: MIT + file LICENSE
 URL: https://rnabioco.github.io/clustifyrdata, http://github.com/rnabioco/clustifyrdata,
 Depends:
     R (>= 3.6.0)
+Imports:
+    tibble
 Suggests:
     clustifyr,
     dplyr,
