@@ -4,9 +4,9 @@
 \name{pbmc5_matrix}
 \alias{pbmc5_matrix}
 \title{Matrix of single-cell RNA-seq PBMCs from 5'end kit.}
-\format{A sparseMatrix with genes as rows and cells as columns.
-\describe{
-}}
+\format{
+An object of class \code{dgCMatrix} with 18587 rows and 8555 columns.
+}
 \source{
 [google.com]
 }

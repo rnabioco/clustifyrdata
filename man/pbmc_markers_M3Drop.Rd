@@ -4,9 +4,9 @@
 \name{pbmc_markers_M3Drop}
 \alias{pbmc_markers_M3Drop}
 \title{Marker genes identified by M3Drop from single-cell RNA-seq PBMCs.}
-\format{A data frame with 3 variables:
-\describe{
-}}
+\format{
+An object of class \code{data.frame} with 162 rows and 3 columns.
+}
 \source{
 [google.com]
 }

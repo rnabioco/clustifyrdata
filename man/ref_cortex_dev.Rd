@@ -4,10 +4,9 @@
 \name{ref_cortex_dev}
 \alias{ref_cortex_dev}
 \title{Matrix of average gene detection on cortex development cell types}
-\format{A matrix with genes as rows and clusters as columns.
-
-\describe{
-}}
+\format{
+An object of class \code{matrix} with 56864 rows and 47 columns.
+}
 \source{
 [https://cells.ucsc.edu/?ds=cortex-dev#]
 }

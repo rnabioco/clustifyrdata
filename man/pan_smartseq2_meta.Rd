@@ -4,9 +4,9 @@
 \name{pan_smartseq2_meta}
 \alias{pan_smartseq2_meta}
 \title{Meta-data for single-cell RNA-seq pancreas data using smartseq2 method.}
-\format{A data frame with 4 variables:
-\describe{
-}}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2209 rows and 5 columns.
+}
 \source{
 ["hemberg"]
 }

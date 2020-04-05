@@ -4,10 +4,9 @@
 \name{pan_indrop_matrix}
 \alias{pan_indrop_matrix}
 \title{Matrix of single-cell RNA-seq pancreas data using indrop method.}
-\format{A sparseMatrix with genes as rows and cells as columns.
-
-\describe{
-}}
+\format{
+An object of class \code{dgCMatrix} with 20125 rows and 8569 columns.
+}
 \source{
 ["hemberg"]
 }

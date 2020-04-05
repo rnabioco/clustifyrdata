@@ -4,10 +4,9 @@
 \name{ref_immgen}
 \alias{ref_immgen}
 \title{Matrix of average gene expression from immgen data}
-\format{A read count average matrix
-
-\describe{
-}}
+\format{
+An object of class \code{matrix} with 22134 rows and 253 columns.
+}
 \source{
 ["SingleR"]
 }

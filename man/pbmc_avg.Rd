@@ -4,10 +4,9 @@
 \name{pbmc_avg}
 \alias{pbmc_avg}
 \title{Matrix of average gene expression per cluster from single-cell RNA-seq PBMCs.}
-\format{A matrix with genes as rows and clusters as columns.
-
-\describe{
-}}
+\format{
+An object of class \code{matrix} with 13714 rows and 9 columns.
+}
 \source{
 [google.com]
 }

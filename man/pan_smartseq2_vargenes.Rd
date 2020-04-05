@@ -4,9 +4,9 @@
 \name{pan_smartseq2_vargenes}
 \alias{pan_smartseq2_vargenes}
 \title{variable genes identified by Seurat from single-cell RNA-seq pancreas data using smartseq2 method.}
-\format{A vector:
-\describe{
-}}
+\format{
+An object of class \code{character} of length 5317.
+}
 \source{
 ["hemberg"]
 }

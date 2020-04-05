@@ -4,9 +4,9 @@
 \name{pbmc5_meta}
 \alias{pbmc5_meta}
 \title{Meta-data for single-cell RNA-seq PBMCs from 5'end kit.}
-\format{A data frame with 4 variables:
-\describe{
-}}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 8555 rows and 4 columns.
+}
 \source{
 [google.com]
 }

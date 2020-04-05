@@ -4,10 +4,9 @@
 \name{MCA_lung_mat}
 \alias{MCA_lung_mat}
 \title{Matrix of single-cell RNA-seq cells of the lung.}
-\format{A sparseMatrix with genes as rows and cells as columns.
-
-\describe{
-}}
+\format{
+An object of class \code{matrix} with 17097 rows and 6940 columns.
+}
 \source{
 [google.com]
 }

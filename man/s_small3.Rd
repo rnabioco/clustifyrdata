@@ -4,9 +4,9 @@
 \name{s_small3}
 \alias{s_small3}
 \title{Small clustered Seurat3 object}
-\format{Seurat
-\describe{
-}}
+\format{
+An object of class \code{Seurat} of length 1.
+}
 \source{
 `[pbmc_small]` processed by `[Seurat]`
 }

@@ -4,10 +4,9 @@
 \name{gtex_bulk_matrix}
 \alias{gtex_bulk_matrix}
 \title{Matrix of average gene expression from GTEx recount bulk RNA seq.}
-\format{A read count average matrix
-
-\describe{
-}}
+\format{
+An object of class \code{matrix} with 25224 rows and 54 columns.
+}
 \source{
 ["SRP012682"]
 }

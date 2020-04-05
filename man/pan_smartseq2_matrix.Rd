@@ -4,10 +4,9 @@
 \name{pan_smartseq2_matrix}
 \alias{pan_smartseq2_matrix}
 \title{Matrix of single-cell RNA-seq pancreas data using smartseq2 method.}
-\format{A sparseMatrix with genes as rows and cells as columns.
-
-\describe{
-}}
+\format{
+An object of class \code{dgCMatrix} with 25525 rows and 2209 columns.
+}
 \source{
 ["hemberg"]
 }

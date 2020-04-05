@@ -4,10 +4,9 @@
 \name{ref_pan_smartseq2}
 \alias{ref_pan_smartseq2}
 \title{Matrix of average gene expression per cluster from single-cell RNA-seq pancreas data using smartseq2 method.}
-\format{A matrix with genes as rows and clusters as columns.
-
-\describe{
-}}
+\format{
+An object of class \code{data.frame} with 25525 rows and 12 columns.
+}
 \source{
 ["hemberg"]
 }

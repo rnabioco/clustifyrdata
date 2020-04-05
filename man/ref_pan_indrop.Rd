@@ -4,10 +4,9 @@
 \name{ref_pan_indrop}
 \alias{ref_pan_indrop}
 \title{Matrix of average gene expression per cluster from single-cell RNA-seq pancreas data using indrop method.}
-\format{A matrix with genes as rows and clusters as columns.
-
-\describe{
-}}
+\format{
+An object of class \code{data.frame} with 20125 rows and 14 columns.
+}
 \source{
 ["hemberg"]
 }

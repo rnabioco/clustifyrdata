@@ -4,9 +4,9 @@
 \name{pbmc5_markers}
 \alias{pbmc5_markers}
 \title{Marker genes identified by Seurat from single-cell RNA-seq PBMCs from 5'end kit.}
-\format{A data frame with 7 variables:
-\describe{
-}}
+\format{
+An object of class \code{data.frame} with 5926 rows and 7 columns.
+}
 \source{
 [google.com]
 }

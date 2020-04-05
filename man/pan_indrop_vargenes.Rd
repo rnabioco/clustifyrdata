@@ -4,9 +4,9 @@
 \name{pan_indrop_vargenes}
 \alias{pan_indrop_vargenes}
 \title{variable genes identified by Seurat from single-cell RNA-seq pancreas data using indrop method.}
-\format{A vector:
-\describe{
-}}
+\format{
+An object of class \code{character} of length 2788.
+}
 \source{
 ["hemberg"]
 }

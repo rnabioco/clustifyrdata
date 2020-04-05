@@ -4,9 +4,9 @@
 \name{MCA_lung_meta}
 \alias{MCA_lung_meta}
 \title{Meta-data for single-cell RNA-seq of the lung.}
-\format{A data frame with 5 variables:
-\describe{
-}}
+\format{
+An object of class \code{data.frame} with 6940 rows and 6 columns.
+}
 \source{
 [google.com]
 }

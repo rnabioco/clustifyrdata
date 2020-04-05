@@ -4,10 +4,9 @@
 \name{yan_ref}
 \alias{yan_ref}
 \title{Matrix of average gene expression from `yan` human embryo data}
-\format{A read count matrix
-
-\describe{
-}}
+\format{
+An object of class \code{matrix} with 20214 rows and 6 columns.
+}
 \source{
 ["scmap"]
 }

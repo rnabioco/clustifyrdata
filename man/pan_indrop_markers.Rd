@@ -4,9 +4,9 @@
 \name{pan_indrop_markers}
 \alias{pan_indrop_markers}
 \title{Marker genes identified by Seurat from single-cell RNA-seq pancreas data using indrop method.}
-\format{A data frame with 7 variables:
-\describe{
-}}
+\format{
+An object of class \code{data.frame} with 7837 rows and 7 columns.
+}
 \source{
 ["hemberg"]
 }

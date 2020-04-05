@@ -4,9 +4,9 @@
 \name{ref_MCA}
 \alias{ref_MCA}
 \title{Matrix of average gene expression for single-cell RNA-seq.}
-\format{A matrix with genes as rows and cells as columns:
-\describe{
-}}
+\format{
+An object of class \code{matrix} with 8601 rows and 713 columns.
+}
 \source{
 [google.com]
 }
