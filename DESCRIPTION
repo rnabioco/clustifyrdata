@@ -5,27 +5,30 @@ Authors@R:
     person(given = "Rui",
            family = "Fu",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Provides external single-cell mRNA sequencing data sets
-    for use with the clustifyr (https://github.com/rnabioco/clustifyr) 
-    package.
+           email = "rui.fu@cuanschutz.edu")
+Description: Provides external single-cell mRNA sequencing data
+    sets for use with the clustifyr
+    (https://github.com/rnabioco/clustifyr) package.
+License: MIT + file LICENSE
+URL: https://rnabioco.github.io/clustifyrdata, http://github.com/rnabioco/clustifyrdata,
 Depends:
     R (>= 3.6.0)
-Imports:
-    clustifyr,
-    tidyverse
 Suggests:
+    clustifyr,
+    dplyr,
+    usethis,
     rmarkdown,
     knitr,
-    covr
-License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.0.1
+    covr,
+    M3Drop,
+    Seurat,
+    purrr,
+    recount,
+    tidyr
 VignetteBuilder: 
     knitr
 Remotes:
-    rstudio/rmarkdown,
     rnabioco/clustifyr
-URL: http://github.com/rnabioco/clustifyrdata,
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
