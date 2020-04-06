@@ -1,14 +1,10 @@
 ---
 title: 'Reference building for clustifyr'
-date: '`r Sys.Date()`'
-output:
-  rmarkdown::html_vignette:
-    toc: true
-    toc_depth: 3
-    vignette: >
-      %\VignetteIndexEntry{clustifyr-reference}
-      %\VignetteEngine{knitr::rmarkdown}
-      %\VignetteEncoding{UTF-8}
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{clustifyr-reference}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r "knitr options", echo = FALSE, message = FALSE, warning = FALSE}
@@ -27,11 +23,11 @@ In its simplest form, a reference matrix is built by averaging expression (also 
 
 ```{r average}
 library(clustifyr)
-full_pbmc_matrix <- clustifyrdata::pbmc_matrix
-full_pbmc_meta <- clustifyrdata::pbmc_meta
+library(clustifyrdata)
+
 new_ref_matrix <- average_clusters(
-  mat = full_pbmc_matrix,
-  metadata = full_pbmc_meta$classified, # or use metadata = full_pbmc_meta, cluster_col = "classified"
+  mat = pbmc_matrix,
+  metadata = pbmc_meta$classified, # or use metadata = pbmc_meta, cluster_col = "classified"
   if_log = TRUE
 )
 
@@ -78,12 +74,12 @@ tail(new_ref_matrix_v3)
 
 Bulk RNA-Seq data can be obtained from any input source; in this example we will obtain a dataset from the [recount2](https://jhubiostatistics.shinyapps.io/recount/) database. This database provides > 2000 human RNA-Seq experiments that have been processed using a consistent pipeline. We have written a wrapper function to download a count matrix from `recount2`, given an SRA ID. 
 
-```{"recount example"}
+```{r, "recount example", eval = FALSE}
 library(dplyr)
 library(purrr)
 library(tidyr)
 library(stringr)
-library(recount)
+library(recount2)
 
 dl_recount <- function(sra_id) {
   if (!file.exists(file.path(sra_id, "rse_gene.Rdata"))) {
@@ -174,7 +170,7 @@ gtex_data$meta_data[1:5, ]
 
 `clustifyr` works with microarray data-derived gene expression matrix as well (see Benchmark page). An example of generating a matrix for sorted immune cell type can be found below. The matrix can be found at `clustifyrdata::hema_microarray_matrix`
 
-```{"microarray example"}
+```{r "microarray example", eval=FALSE}
 library(tidyverse)
 # read series matrix for column names
 GSE24759 <- read_tsv("GSE24759/GSE24759_series_matrix.txt", skip = 25, n_max = 1)

@@ -1,14 +1,10 @@
 ---
 title: 'Prebuilt references for clustifyr'
-date: '`r Sys.Date()`'
-output:
-  rmarkdown::html_vignette:
-    toc: true
-    toc_depth: 3
-    vignette: >
-      %\VignetteIndexEntry{clustifyr-downrefs}
-      %\VignetteEngine{knitr::rmarkdown}
-      %\VignetteEncoding{UTF-8}
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{clustifyr-downrefs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r "knitr options", echo = FALSE, message = FALSE, warning = FALSE}

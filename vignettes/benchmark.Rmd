@@ -1,15 +1,10 @@
 ---
 title: 'Benchmarking clustifyr'
-date: '`r Sys.Date()`'
-output:
-  rmarkdown::html_vignette:
-    toc: true
-    toc_depth: 3
-    df_print: paged
-    vignette: >
-      %\VignetteIndexEntry{clustifyr-benchmark}
-      %\VignetteEngine{knitr::rmarkdown}
-      %\VignetteEncoding{UTF-8}
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{clustifyr-benchmark}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r knitr_opts, echo = FALSE, message = FALSE, warning = FALSE}

@@ -1,14 +1,10 @@
 ---
-title: 'Support for various single cell object formats'
-date: '`r Sys.Date()`'
-output:
-  rmarkdown::html_vignette:
-    toc: true
-    toc_depth: 3
-    vignette: >
-      %\VignetteIndexEntry{clustifyr-formats}
-      %\VignetteEngine{knitr::rmarkdown}
-      %\VignetteEncoding{UTF-8}
+title: 'Support for single cell object formats'
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{clustifyr-formats}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r "knitr options", echo = FALSE, message = FALSE, warning = FALSE}
