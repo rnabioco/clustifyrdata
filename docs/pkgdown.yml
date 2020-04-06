@@ -1,5 +1,5 @@
-pandoc: 2.7.3
-pkgdown: 1.4.1
+pandoc: 2.9.2
+pkgdown: 1.5.0.9000
 pkgdown_sha: ~
 articles:
   benchmark: benchmark.html
@@ -8,6 +8,7 @@ articles:
   othertools: othertools.html
   references: references.html
   visualizations: visualizations.html
+last_built: 2020-04-06T16:14Z
 urls:
   reference: https://rnabioco.github.io/clustifyrdata/reference
   article: https://rnabioco.github.io/clustifyrdata/articles
