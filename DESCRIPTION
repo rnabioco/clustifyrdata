@@ -1,32 +1,37 @@
 Package: clustifyrdata
-Title: External data sets for clustifyR
-Version: 0.1.0
+Title: External data sets for clustifyr
+Version: 0.2.0
 Authors@R: 
-    person(given = "Rui",
-           family = "Fu",
-           role = c("aut", "cre"),
-           email = "rui.fu@cuanschutz.edu")
-Description: Provides external single-cell mRNA sequencing data
-    sets for use with the clustifyr
-    (https://github.com/rnabioco/clustifyr) package.
+    c(person(given = "Rui",
+             family = "Fu",
+             role = c("aut", "cre"),
+             email = "rui.fu@cuanschutz.edu"),
+      person(given = "Jay",
+             family = "Hesselberth",
+             role = "aut",
+             email = "jay.hesselberth@cuanschutz.edu"))
+Description: External single-cell mRNA sequencing data sets for
+    use with clustifyr <https://github.com/rnabioco/clustifyr>.
 License: MIT + file LICENSE
-URL: https://rnabioco.github.io/clustifyrdata, http://github.com/rnabioco/clustifyrdata,
+URL: https://rnabioco.github.io/clustifyrdata,
+    http://github.com/rnabioco/clustifyrdata,
 Depends:
     R (>= 3.6.0)
 Imports:
     tibble
 Suggests:
-    clustifyr,
     dplyr,
+    clustifyr,
+    Seurat,
     usethis,
     rmarkdown,
     knitr,
     covr,
     M3Drop,
-    Seurat,
     purrr,
     recount,
-    tidyr
+    tidyr,
+    ComplexHeatmap
 VignetteBuilder: 
     knitr
 Remotes:
