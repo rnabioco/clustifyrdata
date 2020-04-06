@@ -7,3 +7,23 @@ home:
   links:
   - text: clustifyr
     href: http://rnabioco.github.io/clustifyr
+
+reference:
+- title: Data sets ported from Seurat
+- contents:
+  - starts_with("s_small")
+- title: Data sets from 10x Genomics
+- contents:
+  - has_concept("10x")
+- title: Data sets from the Mouse Cell Atlas
+- contents:
+  - has_concept("MCA")
+- title: Data sets from the Hemberg lab
+- contents:
+  - has_concept("hemberg")
+- title: Miscellaneous data sets
+- contents:
+  - gtex_bulk_matrix
+  - yan_ref
+  - starts_with("ref_")
+  
