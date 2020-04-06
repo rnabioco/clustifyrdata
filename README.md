@@ -14,9 +14,10 @@ with [clustifyr](https://rnabioco.github.io/clustifyr).
 
 clustifyrdata provides [reproducible
 scripts](https://github.com/rnabioco/clustifyrdata/tree/master/data-raw)
-to build each data file. . See the [reference
-page](https://rnabioco.github.io/clustifyrdata) for details on the data
-sets.
+to build each data file.
+
+See the [reference page](https://rnabioco.github.io/clustifyrdata) for
+available data sets.
 
 Data sets have uninform suffixes:
 
@@ -28,9 +29,10 @@ Data sets have uninform suffixes:
   - `*_meta` : metadata from a single-cell RNA-seq experiment.
 
   - `*_vargenes` : variable genes used for dimension reduction,
-    determined by Seurat.
+    determined by [Seurat](https://CRAN.R-project.org/package=Seurat).
 
-  - `*_markers` : marker genes determined by Seurat.
+  - `*_markers` : marker genes determined by
+    [Seurat](https://CRAN.R-project.org/package=Seurat).
 
   - `*_M3Drop` : variable genes used for dimension reduction as
     determined by
