@@ -14,8 +14,9 @@ with [clustifyr](https://rnabioco.github.io/clustifyr) and [reproducible
 scripts](https://github.com/rnabioco/clustifyrdata/tree/master/data-raw)
 to build data objects.
 
-See the [reference page](https://rnabioco.github.io/clustifyrdata) for
-available data sets.
+See the [reference
+page](https://rnabioco.github.io/clustifyrdata/reference) for available
+data sets.
 
 Data sets have uninform suffixes:
 
