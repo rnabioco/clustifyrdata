@@ -8,7 +8,7 @@
 An object of class \code{character} of length 5317.
 }
 \source{
-["hemberg"]
+<https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/>
 }
 \usage{
 pan_smartseq2_vargenes
@@ -16,4 +16,16 @@ pan_smartseq2_vargenes
 \description{
 A sample of 2209 pancreas cells
 }
+\seealso{
+Other hemberg: 
+\code{\link{pan_indrop_markers}},
+\code{\link{pan_indrop_matrix}},
+\code{\link{pan_indrop_meta}},
+\code{\link{pan_indrop_vargenes}},
+\code{\link{pan_smartseq2_matrix}},
+\code{\link{pan_smartseq2_meta}},
+\code{\link{ref_pan_indrop}},
+\code{\link{ref_pan_smartseq2}}
+}
+\concept{hemberg}
 \keyword{datasets}

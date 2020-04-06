@@ -8,7 +8,7 @@
 An object of class \code{matrix} with 56864 rows and 47 columns.
 }
 \source{
-[https://cells.ucsc.edu/?ds=cortex-dev#]
+<https://cells.ucsc.edu/?ds=cortex-dev#>
 }
 \usage{
 ref_cortex_dev

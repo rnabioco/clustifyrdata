@@ -8,7 +8,7 @@
 An object of class \code{matrix} with 26183 rows and 37 columns.
 }
 \source{
-[http://atlas.gs.washington.edu/mouse-rna/]
+<http://atlas.gs.washington.edu/mouse-rna/>
 }
 \usage{
 ref_moca_main

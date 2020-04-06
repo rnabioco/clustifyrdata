@@ -8,7 +8,7 @@
 An object of class \code{matrix} with 23341 rows and 112 columns.
 }
 \source{
-[https://tabula-muris.ds.czbiohub.org/]
+<https://tabula-muris.ds.czbiohub.org/>
 }
 \usage{
 ref_tabula_muris_drop

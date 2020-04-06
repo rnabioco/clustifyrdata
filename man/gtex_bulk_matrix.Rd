@@ -8,7 +8,7 @@
 An object of class \code{matrix} with 25224 rows and 54 columns.
 }
 \source{
-["SRP012682"]
+<https://www.ebi.ac.uk/ena/data/view/PRJNA75899>
 }
 \usage{
 gtex_bulk_matrix

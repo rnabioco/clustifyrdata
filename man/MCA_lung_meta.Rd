@@ -8,7 +8,7 @@
 An object of class \code{data.frame} with 6940 rows and 6 columns.
 }
 \source{
-[google.com]
+<https://figshare.com/s/865e694ad06d5857db4b>
 }
 \usage{
 MCA_lung_meta
@@ -16,4 +16,10 @@ MCA_lung_meta
 \description{
 A sample of lung cells, from mouse cell atlas project
 }
+\seealso{
+Other MCA: 
+\code{\link{MCA_lung_mat}},
+\code{\link{ref_MCA}}
+}
+\concept{MCA}
 \keyword{datasets}

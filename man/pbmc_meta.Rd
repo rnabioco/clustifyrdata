@@ -8,7 +8,7 @@
 An object of class \code{data.frame} with 2638 rows and 9 columns.
 }
 \source{
-[google.com]
+<https://support.10xgenomics.com/single-cell-gene-expression/datasets/2.1.0/pbmc4k>
 }
 \usage{
 pbmc_meta
@@ -16,4 +16,16 @@ pbmc_meta
 \description{
 A sample of 3k cells
 }
+\seealso{
+Other 10x: 
+\code{\link{pbmc5_markers}},
+\code{\link{pbmc5_matrix}},
+\code{\link{pbmc5_meta}},
+\code{\link{pbmc_avg}},
+\code{\link{pbmc_markers_M3Drop}},
+\code{\link{pbmc_markers}},
+\code{\link{pbmc_matrix}},
+\code{\link{pbmc_vargenes}}
+}
+\concept{10x}
 \keyword{datasets}

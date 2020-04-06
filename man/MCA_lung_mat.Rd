@@ -8,7 +8,7 @@
 An object of class \code{matrix} with 17097 rows and 6940 columns.
 }
 \source{
-[google.com]
+<https://figshare.com/s/865e694ad06d5857db4b>
 }
 \usage{
 MCA_lung_mat
@@ -16,4 +16,10 @@ MCA_lung_mat
 \description{
 A sample of lung cells, from mouse cell atlas project
 }
+\seealso{
+Other MCA: 
+\code{\link{MCA_lung_meta}},
+\code{\link{ref_MCA}}
+}
+\concept{MCA}
 \keyword{datasets}

@@ -8,7 +8,7 @@
 An object of class \code{Seurat} of length 1.
 }
 \source{
-`[pbmc_small]` processed by `[Seurat]`
+`pbmc_small` processed by `[Seurat]`
 }
 \usage{
 s_small3

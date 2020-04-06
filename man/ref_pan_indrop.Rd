@@ -8,7 +8,7 @@
 An object of class \code{data.frame} with 20125 rows and 14 columns.
 }
 \source{
-["hemberg"]
+<https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/>
 }
 \usage{
 ref_pan_indrop
@@ -16,4 +16,16 @@ ref_pan_indrop
 \description{
 A sample of 8569 pancreas cells
 }
+\seealso{
+Other hemberg: 
+\code{\link{pan_indrop_markers}},
+\code{\link{pan_indrop_matrix}},
+\code{\link{pan_indrop_meta}},
+\code{\link{pan_indrop_vargenes}},
+\code{\link{pan_smartseq2_matrix}},
+\code{\link{pan_smartseq2_meta}},
+\code{\link{pan_smartseq2_vargenes}},
+\code{\link{ref_pan_smartseq2}}
+}
+\concept{hemberg}
 \keyword{datasets}
