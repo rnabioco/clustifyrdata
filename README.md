@@ -10,11 +10,9 @@ status](https://github.com/rnabioco/clustifyrdata/workflows/R-CMD-check/badge.sv
 <!-- badges: end -->
 
 clustifyrdata provides 43 external data sets for cell-type assignment
-with [clustifyr](https://rnabioco.github.io/clustifyr).
-
-clustifyrdata provides [reproducible
+with [clustifyr](https://rnabioco.github.io/clustifyr) and [reproducible
 scripts](https://github.com/rnabioco/clustifyrdata/tree/master/data-raw)
-to build each data file.
+to build data objects.
 
 See the [reference page](https://rnabioco.github.io/clustifyrdata) for
 available data sets.
@@ -39,6 +37,9 @@ Data sets have uninform suffixes:
     [M3Drop](https://bioconductor.org/packages/release/bioc/html/M3Drop.html).
 
 ## Installation
+
+**N.B.: clustifyrdata is a large data package (nearly 350 Mb
+uncompressed).**
 
 ``` r
 # install.packages("remotes")
