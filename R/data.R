@@ -251,3 +251,9 @@ NULL
 #' @source <https://figshare.com/s/865e694ad06d5857db4b>
 #' @family ref
 "ref_MCA"
+
+#' table of references stored in clustifyrdata
+#'
+#' @family data
+#' @source  various packages
+"downrefs"
