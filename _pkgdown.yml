@@ -9,6 +9,9 @@ home:
     href: http://rnabioco.github.io/clustifyr
 
 reference:
+- title: pre-built references
+- contents:
+  - has_concept("ref")
 - title: Data sets ported from Seurat
 - contents:
   - starts_with("s_small")
@@ -25,5 +28,5 @@ reference:
 - contents:
   - gtex_bulk_matrix
   - yan_ref
-  - starts_with("ref_")
+  - downrefs
   
