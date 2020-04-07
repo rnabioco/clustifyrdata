@@ -14,11 +14,12 @@ with [clustifyr](https://rnabioco.github.io/clustifyr) and [reproducible
 scripts](https://github.com/rnabioco/clustifyrdata/tree/master/data-raw)
 to build data objects.
 
-See the [reference
-page](https://rnabioco.github.io/clustifyrdata/reference) for available
-data sets.
+See the [prebuilt reference
+page](https://rnabioco.github.io/clustifyrdata/articles/download_refs.html) for available
+data sets, also offered as separate downloads.
 
-Data sets have uninform suffixes:
+Data sets have uniform prefixes and/or suffixes:
+  - `ref_*` : the prebuilt reference expression matrix
 
   - `*_matrix` : single-cell RNA expression matrix.
 

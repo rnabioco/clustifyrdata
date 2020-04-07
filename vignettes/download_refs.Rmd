@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Download all references from `clustifyrdata` (~200Mb)
+## Download all references from `clustifyrdata` (~300Mb)
 
 All references used in tutorials and more are available at https://github.com/rnabioco/clustifyrdata
 
@@ -28,6 +28,6 @@ devtools::install_github("rnabioco/clustifyrdata")
 
 ## List of references
 
-```{r}
-knitr::kable(clustifyr::downrefs)
+```{r, echo = F}
+knitr::kable(clustifyrdata::downrefs)
 ```

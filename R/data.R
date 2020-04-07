@@ -78,6 +78,7 @@ NULL
 #' 422,803 droplet libraries, 55,656 of which passed a QC cutoff of 500 genes and 1000 UMI
 #'
 #' @source <https://tabula-muris.ds.czbiohub.org/>
+#' @family ref
 "ref_tabula_muris_drop"
 
 #' Matrix of average gene expression per cluster from single-cell RNA-seq from Tabula Muris (SMART-Seq2).
@@ -85,6 +86,7 @@ NULL
 #' 53,760 cells from 20 tissues from 8 mice
 #'
 #' @source <https://tabula-muris.ds.czbiohub.org/>
+#' @family ref
 "ref_tabula_muris_facs"
 
 #' Matrix of average gene expression from GTEx recount bulk RNA seq.
@@ -92,6 +94,7 @@ NULL
 #' 53,760 cells from 20 tissues from 8 mice
 #'
 #' @source <https://www.ebi.ac.uk/ena/data/view/PRJNA75899>
+#' @family ref
 "gtex_bulk_matrix"
 
 #' Matrix of average gene expression from immgen data
@@ -99,6 +102,7 @@ NULL
 #' 253 mouse immune cell types
 #'
 #' @source ["SingleR"]
+#' @family ref
 "ref_immgen"
 
 #' Matrix of average gene expression from general mouse cell type data
@@ -106,6 +110,7 @@ NULL
 #' 28 general cell types
 #'
 #' @source ["SingleR"]
+#' @family ref
 "ref_mouse.rnaseq"
 
 #' Matrix of average gene expression from `yan` human embryo data
@@ -128,7 +133,7 @@ NULL
 #' A sample of 8569 pancreas cells
 #'
 #' @source <https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/>
-#' @family hemberg
+#' @family ref
 "ref_pan_indrop"
 
 #' Marker genes identified by Seurat from single-cell RNA-seq pancreas data using indrop method.
@@ -168,7 +173,7 @@ NULL
 #' A sample of 2209 pancreas cells
 #'
 #' @source <https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/>
-#' @family hemberg
+#' @family ref
 "ref_pan_smartseq2"
 
 #' Meta-data for single-cell RNA-seq pancreas data using smartseq2 method.
@@ -192,6 +197,7 @@ NULL
 #' 100,000 cells
 #'
 #' @source <http://atlas.gs.washington.edu/mouse-rna/>
+#' @family ref
 "ref_moca_main"
 
 #' Matrix of average gene detection by microarray on sorted immune cell populations
@@ -199,6 +205,7 @@ NULL
 #' 38 distinct purified populations of human hematopoietic cells
 #'
 #' @source [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE24759]
+#' @family ref
 "ref_hema_microarray"
 
 #' Matrix of average gene detection on cortex development cell types
@@ -206,16 +213,19 @@ NULL
 #' 47 distinct annotated clusters of human neuronal subtypes
 #'
 #' @source <https://cells.ucsc.edu/?ds=cortex-dev#>
+#' @family ref
 "ref_cortex_dev"
 
 #' Small clustered Seurat2 object
 #'
 #' @source  `pbmc_small` processed by `[seurat]`
+#' @family obj
 "s_small"
 
 #' Small clustered Seurat3 object
 #'
 #' @source  `pbmc_small` processed by `[Seurat]`
+#' @family obj
 "s_small3"
 
 #' Matrix of single-cell RNA-seq cells of the lung.
@@ -239,5 +249,5 @@ NULL
 #' from mouse cell atlas project
 #'
 #' @source <https://figshare.com/s/865e694ad06d5857db4b>
-#' @family MCA
+#' @family ref
 "ref_MCA"
