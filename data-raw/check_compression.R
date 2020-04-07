@@ -1,7 +1,7 @@
 library(usethis)
 files <- list.files(path = "..", pattern = "\\.Robj$")
 for (file in files) {
-  load(paste0("/Users/rf/cluster/devel/tmp/clustifyrdata/clustifyrdata/data/", file))
+  load(paste0("data/", file))
 }
 for (file in files) {
   name <- stringr::str_remove(file, ".rda")

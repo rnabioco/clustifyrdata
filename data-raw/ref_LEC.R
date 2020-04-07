@@ -2,8 +2,10 @@ library(clustifyr)
 library(tidyverse)
 library(usethis)
 library(Seurat)
-path <- "/Users/rf/Downloads/GSE124494_RAW/"
-samples <- list.files(path, pattern = "mtx.gz") %>% str_remove("_matrix.mtx.gz")
+download.file("https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE124494&format=file", 
+              destfile = "GSE124494_RAW.tar")
+untar("GSE124494_RAW.tar")
+samples <- list.files(pattern = "mtx.gz") %>% str_remove("_matrix.mtx.gz")
 ml <- list()
 for (s in samples) {
   temp <- Matrix::readMM(paste0(path, s, "_matrix.mtx.gz"))

@@ -3,7 +3,10 @@ library(tidyverse)
 library(usethis)
 
 # follow seurat tutorial from https://satijalab.org/seurat/v3.0/pbmc3k_tutorial.html
-pbmc.data <- Read10X(data.dir = "/Users/rf/Downloads/filtered_gene_bc_matrices/hg19")
+download.file("https://s3-us-west-2.amazonaws.com/10x.files/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz", 
+              destfile = "pbmc3k_filtered_gene_bc_matrices.tar.gz")
+untar("pbmc3k_filtered_gene_bc_matrices.tar.gz")
+pbmc.data <- Read10X(data.dir = "filtered_gene_bc_matrices/hg19")
 pbmc <- CreateSeuratObject(counts = pbmc.data, project = "pbmc3k", min.cells = 3, min.features = 200)
 pbmc[["percent.mt"]] <- PercentageFeatureSet(pbmc, pattern = "^MT-")
 pbmc <- subset(pbmc, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)

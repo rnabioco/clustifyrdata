@@ -1,13 +1,13 @@
 library(tidyverse)
 # read series matrix for column names
-GSE24759 <- read_tsv("GSE24759/GSE24759_series_matrix.txt", skip = 25, n_max = 1)
+GSE24759 <- read_tsv("https://ftp.ncbi.nlm.nih.gov/geo/series/GSE24nnn/GSE24759/matrix/GSE24759_series_matrix.txt.gz", skip = 25, n_max = 1)
 
 # read series matrix for full dataset; apply column names
-GSE24759 <- read_tsv("GSE24759//GSE24759_series_matrix.txt", skip = 57, col_names = colnames(GSE24759)) %>%
+GSE24759 <- read_tsv("https://ftp.ncbi.nlm.nih.gov/geo/series/GSE24nnn/GSE24759/matrix/GSE24759_series_matrix.txt.gz", skip = 57, col_names = colnames(GSE24759)) %>%
   rename(ID = `!Sample_title`)
 
 # read array metadata table, remove control probes and missing gene symbols
-GPL4685 <- read_tsv("/Users/rf/microarray/GSE24759/GPL4685-15513.txt", skip = 14) %>%
+GPL4685 <- read_tsv("GPL4685-15513.txt", skip = 14) %>% # from https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL4685
   filter(!is.na(`Gene Symbol`), `Sequence Type` != "Control sequence") %>% 
   separate(`Gene Symbol`, into = "gene_symbol", sep = ' ') %>%
   select(ID,gene_symbol)

@@ -1,10 +1,13 @@
 library(Seurat)
 library(clustifyr)
 library(tidyverse)
+download.file("https://ndownloader.figshare.com/articles/5821263/versions/3", 
+              destfile = "tm.zip")
+unzip("tm.zip")
 
-files <- list.files(path = "/Users/", pattern = "\\.Robj$")
-files_facs <- list.files(path = "/Users/", pattern = "facs.*\\.Robj$")
-files_drop <- list.files(path = "/Users/", pattern = "droplet.*\\.Robj$")
+files <- list.files(pattern = "\\.Robj$")
+files_facs <- list.files(pattern = "facs.*\\.Robj$")
+files_drop <- list.files(pattern = "droplet.*\\.Robj$")
 
 load_obj <- function(f)
 {

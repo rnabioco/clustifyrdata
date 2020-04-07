@@ -1,8 +1,8 @@
 library(clustifyr)
 library(tidyverse)
 
-mat <- read_tsv("/Users/rf/Downloads/exprMatrix.tsv.gz") %>% tibble::column_to_rownames("gene")
-meta <- read_tsv("/Users/rf/Downloads/meta.tsv")
+mat <- read_tsv("https://cells.ucsc.edu/cortex-dev/exprMatrix.tsv.gz") %>% tibble::column_to_rownames("gene")
+meta <- read_tsv("https://cells.ucsc.edu/cortex-dev/meta.tsv")
 
 ref_cortex_dev <- average_clusters(
   mat,
