@@ -17,9 +17,17 @@ ref_MCA
 from mouse cell atlas project
 }
 \seealso{
-Other MCA: 
-\code{\link{MCA_lung_mat}},
-\code{\link{MCA_lung_meta}}
+Other ref: 
+\code{\link{gtex_bulk_matrix}},
+\code{\link{ref_cortex_dev}},
+\code{\link{ref_hema_microarray}},
+\code{\link{ref_immgen}},
+\code{\link{ref_moca_main}},
+\code{\link{ref_mouse.rnaseq}},
+\code{\link{ref_pan_indrop}},
+\code{\link{ref_pan_smartseq2}},
+\code{\link{ref_tabula_muris_drop}},
+\code{\link{ref_tabula_muris_facs}}
 }
-\concept{MCA}
+\concept{ref}
 \keyword{datasets}

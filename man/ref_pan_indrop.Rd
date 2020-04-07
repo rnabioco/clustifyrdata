@@ -17,15 +17,17 @@ ref_pan_indrop
 A sample of 8569 pancreas cells
 }
 \seealso{
-Other hemberg: 
-\code{\link{pan_indrop_markers}},
-\code{\link{pan_indrop_matrix}},
-\code{\link{pan_indrop_meta}},
-\code{\link{pan_indrop_vargenes}},
-\code{\link{pan_smartseq2_matrix}},
-\code{\link{pan_smartseq2_meta}},
-\code{\link{pan_smartseq2_vargenes}},
-\code{\link{ref_pan_smartseq2}}
+Other ref: 
+\code{\link{gtex_bulk_matrix}},
+\code{\link{ref_MCA}},
+\code{\link{ref_cortex_dev}},
+\code{\link{ref_hema_microarray}},
+\code{\link{ref_immgen}},
+\code{\link{ref_moca_main}},
+\code{\link{ref_mouse.rnaseq}},
+\code{\link{ref_pan_smartseq2}},
+\code{\link{ref_tabula_muris_drop}},
+\code{\link{ref_tabula_muris_facs}}
 }
-\concept{hemberg}
+\concept{ref}
 \keyword{datasets}

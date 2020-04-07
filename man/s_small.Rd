@@ -16,4 +16,9 @@ s_small
 \description{
 Small clustered Seurat2 object
 }
+\seealso{
+Other obj: 
+\code{\link{s_small3}}
+}
+\concept{obj}
 \keyword{datasets}

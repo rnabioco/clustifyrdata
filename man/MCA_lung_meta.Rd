@@ -18,8 +18,7 @@ A sample of lung cells, from mouse cell atlas project
 }
 \seealso{
 Other MCA: 
-\code{\link{MCA_lung_mat}},
-\code{\link{ref_MCA}}
+\code{\link{MCA_lung_mat}}
 }
 \concept{MCA}
 \keyword{datasets}

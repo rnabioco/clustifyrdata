@@ -23,9 +23,7 @@ Other hemberg:
 \code{\link{pan_indrop_meta}},
 \code{\link{pan_indrop_vargenes}},
 \code{\link{pan_smartseq2_matrix}},
-\code{\link{pan_smartseq2_meta}},
-\code{\link{ref_pan_indrop}},
-\code{\link{ref_pan_smartseq2}}
+\code{\link{pan_smartseq2_meta}}
 }
 \concept{hemberg}
 \keyword{datasets}
