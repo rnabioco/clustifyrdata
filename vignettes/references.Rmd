@@ -139,7 +139,7 @@ dl_recount <- function(sra_id) {
   row_ids_to_symbols <- filter(row_ids_to_symbols, !is.na(symbols))
 
   out_df <- read_counts %>%
-    as.data.frame() %>%
+    as.data.frame() %>% 
     tibble::rownames_to_column("gene_id") %>%
     left_join(., row_ids_to_symbols, by = c("gene_id" = "ids")) %>%
     dplyr::select(-gene_id) %>%
@@ -150,8 +150,11 @@ dl_recount <- function(sra_id) {
     group_by(symbols, library) %>%
     summarize(expr = sum(expr)) %>%
     tidyr::spread(library, expr) %>%
-    as.data.frame() %>%
-    tibble::column_to_rownames("symbols") %>%
+    as.data.frame()
+  if (tibble::has_rownames(out_matrix)) {
+    out_matrix <- tibble::remove_rownames(out_matrix)
+  }
+  out_matrix <- out_matrix %>% tibble::column_to_rownames("symbols") %>%
     as.matrix()
 
   list(
@@ -203,7 +206,12 @@ ref_hema_microarray <- GSE24759_mat %>%
   rownames_to_column("sample") %>%
   mutate(sample = str_remove(sample, ", .*")) %>%
   group_by(sample) %>%
-  summarise_all(.funs = list(~ log2(mean(2^.)))) %>%
+  summarise_all(.funs = list(~ log2(mean(2^.))))
+
+if (tibble::has_rownames(ref_hema_microarray)) {
+  ref_hema_microarray <- tibble::remove_rownames(ref_hema_microarray)
+}
+ref_hema_microarray <- ref_hema_microarray %>%
   column_to_rownames("sample") %>%
   t()
 ```
