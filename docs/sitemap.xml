@@ -10,6 +10,9 @@
     <loc>https://rnabioco.github.io/clustifyrdata/reference/MCA_lung_meta.html</loc>
   </url>
   <url>
+    <loc>https://rnabioco.github.io/clustifyrdata/reference/downrefs.html</loc>
+  </url>
+  <url>
     <loc>https://rnabioco.github.io/clustifyrdata/reference/gtex_bulk_matrix.html</loc>
   </url>
   <url>
@@ -104,6 +107,9 @@
   </url>
   <url>
     <loc>https://rnabioco.github.io/clustifyrdata/articles/download_refs.html</loc>
+  </url>
+  <url>
+    <loc>https://rnabioco.github.io/clustifyrdata/articles/geo-annotations.html</loc>
   </url>
   <url>
     <loc>https://rnabioco.github.io/clustifyrdata/articles/otherformats.html</loc>

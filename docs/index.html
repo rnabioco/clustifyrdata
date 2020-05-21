@@ -61,6 +61,9 @@
       <a href="articles/download_refs.html">Prebuilt references for clustifyr</a>
     </li>
     <li>
+      <a href="articles/geo-annotations.html">Improving NCBI GEO submissions of scRNA-seq data</a>
+    </li>
+    <li>
       <a href="articles/otherformats.html">Support for single cell object formats</a>
     </li>
     <li>
@@ -77,7 +80,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="http://github.com/rnabioco/clustifyrdata/">
+  <a href="https://github.com/rnabioco/clustifyrdatahub/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -99,9 +102,112 @@
 <a href="#clustifyrdata" class="anchor"></a>clustifyrdata</h1></div>
 <!-- badges: start -->
 
-<p>clustifyrdata provides 43 external data sets for cell-type assignment with <a href="https://rnabioco.github.io/clustifyr">clustifyr</a> and <a href="https://github.com/rnabioco/clustifyrdata/tree/master/data-raw">reproducible scripts</a> to build data objects.</p>
-<p>See the <a href="https://rnabioco.github.io/clustifyrdata/reference">reference page</a> for available data sets.</p>
-<p>Data sets have uninform suffixes:</p>
+<p>clustifyrdata provides 41 external data sets for cell-type assignment with <a href="https://rnabioco.github.io/clustifyr">clustifyr</a> and <a href="https://github.com/rnabioco/clustifyrdata/tree/master/data-raw">reproducible scripts</a> to build data objects.</p>
+<div id="commonly-used-references" class="section level2">
+<h2 class="hasAnchor">
+<a href="#commonly-used-references" class="anchor"></a>Commonly used references:</h2>
+<table class="table">
+<colgroup>
+<col width="44%">
+<col width="19%">
+<col width="2%">
+<col width="2%">
+<col width="1%">
+<col width="29%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">name</th>
+<th align="left">desc</th>
+<th align="left">ntypes</th>
+<th align="left">ngenes</th>
+<th align="left">org</th>
+<th align="left">from_pub</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_MCA.rda">ref_MCA</a></td>
+<td align="left">Mouse Cell Atlas</td>
+<td align="left">713</td>
+<td align="left">8601</td>
+<td align="left">mouse</td>
+<td align="left"><a href="https://www.cell.com/cell/fulltext/S0092-8674(18)30116-8">from</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_tabula_muris_drop.rda">ref_tabula_muris_drop</a></td>
+<td align="left">Tabula Muris (10X)</td>
+<td align="left">112</td>
+<td align="left">23341</td>
+<td align="left">mouse</td>
+<td align="left"><a href="https://www.nature.com/articles/s41586-018-0590-4">from</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_tabula_muris_facs.rda">ref_tabula_muris_facs</a></td>
+<td align="left">Tabula Muris (SmartSeq2)</td>
+<td align="left">175</td>
+<td align="left">23341</td>
+<td align="left">mouse</td>
+<td align="left"><a href="https://www.nature.com/articles/s41586-018-0590-4">from</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_mouse.rnaseq.rda">ref_mouse.rnaseq</a></td>
+<td align="left">Mouse RNA-seq from 28 cell types</td>
+<td align="left">28</td>
+<td align="left">21214</td>
+<td align="left">mouse</td>
+<td align="left"><a href="https://genome.cshlp.org/content/early/2019/03/11/gr.240093.118">from</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_moca_main.rda">ref_moca_main</a></td>
+<td align="left">Mouse Organogenesis Cell Atlas (main cell types)</td>
+<td align="left">37</td>
+<td align="left">26183</td>
+<td align="left">mouse</td>
+<td align="left"><a href="https://www.nature.com/articles/s41586-019-0969-x">from</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_immgen.rda">ref_immgen</a></td>
+<td align="left">Mouse sorted immune cells</td>
+<td align="left">253</td>
+<td align="left">22134</td>
+<td align="left">mouse</td>
+<td align="left"><a href="https://www.nature.com/articles/ni1008-1091">from</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_hema_microarray.rda">ref_hema_microarray</a></td>
+<td align="left">Human hematopoietic cell microarray</td>
+<td align="left">38</td>
+<td align="left">21246</td>
+<td align="left">human</td>
+<td align="left"><a href="https://www.cell.com/fulltext/S0092-8674(11)00005-5">from</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_cortex_dev.rda">ref_cortex_dev</a></td>
+<td align="left">Human cortex development scRNA-seq</td>
+<td align="left">47</td>
+<td align="left">56864</td>
+<td align="left">human</td>
+<td align="left"><a href="https://science.sciencemag.org/content/358/6368/1318.long">from</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_pan_indrop.rda">ref_pan_indrop</a></td>
+<td align="left">Human pancreatic cell scRNA-seq (inDrop)</td>
+<td align="left">14</td>
+<td align="left">20125</td>
+<td align="left">human</td>
+<td align="left"><a href="https://www.cell.com/fulltext/S2405-4712(16)30266-6">from</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_pan_smartseq2.rda">ref_pan_smartseq2</a></td>
+<td align="left">Human pancreatic cell scRNA-seq (SmartSeq2)</td>
+<td align="left">12</td>
+<td align="left">25525</td>
+<td align="left">human</td>
+<td align="left"><a href="https://www.sciencedirect.com/science/article/pii/S1550413116304363">from</a></td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="https://rnabioco.github.io/clustifyrdata/reference">reference page</a> for available data sets, and <a href="https://rnabioco.github.io/clustifyrdata/articles/download_refs.html">individual ref download page</a>.</p>
+<p>Data sets have uniform suffixes: - <code>ref_*</code> : the prebuilt reference expression matrix.</p>
 <ul>
 <li><p><code>*_matrix</code> : single-cell RNA expression matrix.</p></li>
 <li><p><code>*_avg</code> : average expression caluculated from a single-cell RNA expression matrix.</p></li>
@@ -110,6 +216,7 @@
 <li><p><code>*_markers</code> : marker genes determined by <a href="https://CRAN.R-project.org/package=Seurat">Seurat</a>.</p></li>
 <li><p><code>*_M3Drop</code> : variable genes used for dimension reduction as determined by <a href="https://bioconductor.org/packages/release/bioc/html/M3Drop.html">M3Drop</a>.</p></li>
 </ul>
+</div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -124,7 +231,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="http://github.com/rnabioco/clustifyrdata/">http://​github.com/​rnabioco/​clustifyrdata/​</a>
+<li>Browse source code at <br><a href="https://github.com/rnabioco/clustifyrdatahub/">https://​github.com/​rnabioco/​clustifyrdatahub/​</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/rnabioco/clustifyrdatahub/issues">https://​github.com/​rnabioco/​clustifyrdatahub/​issues</a>
 </li>
 <li>clustifyr at <br><a href="http://rnabioco.github.io/clustifyr">http://​rnabioco.github.io/​clustifyr</a>
 </li>
@@ -160,7 +269,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

@@ -21,6 +21,12 @@ knitr::opts_chunk$set(
 
 clustifyrdata provides `r length(tools::list_files_with_type("data", type = "data"))` external data sets for cell-type assignment with [clustifyr](https://rnabioco.github.io/clustifyr) and [reproducible scripts](https://github.com/rnabioco/clustifyrdata/tree/master/data-raw) to build data objects.
 
+## Commonly used references:
+
+```{r, echo = F}
+knitr::kable(clustifyrdata::downrefs)
+```
+
 See the [reference page](https://rnabioco.github.io/clustifyrdata/reference) for available data sets, and [individual ref download page](https://rnabioco.github.io/clustifyrdata/articles/download_refs.html).
 
 Data sets have uniform suffixes:

@@ -74,11 +74,14 @@ Making scRNA-seq objects into references is assisted by wrappers as well.
 
 ```{r, messag = T}
 # for both v2 and v3
-seurat_ref <- seurat_ref(
-  seurat_object = s_small3,
+seurat_ref <- object_ref(
+  input = s_small3,
   cluster_col = "RNA_snn_res.1"
 )
 
 # and other object types with lookup
-object_ref <- object_ref(input = s_small3)
+object_ref <- object_ref(
+  input = sce_small,
+  cluster_col = "cell_type1"
+)
 ```

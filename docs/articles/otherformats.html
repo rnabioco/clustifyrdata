@@ -60,6 +60,9 @@
       <a href="../articles/download_refs.html">Prebuilt references for clustifyr</a>
     </li>
     <li>
+      <a href="../articles/geo-annotations.html">Improving NCBI GEO submissions of scRNA-seq data</a>
+    </li>
+    <li>
       <a href="../articles/otherformats.html">Support for single cell object formats</a>
     </li>
     <li>
@@ -76,7 +79,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="http://github.com/rnabioco/clustifyrdata/">
+  <a href="https://github.com/rnabioco/clustifyrdatahub/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -97,7 +100,7 @@
       <h1 data-toc-skip>Support for single cell object formats</h1>
             
       
-      <small class="dont-index">Source: <a href="http://github.com/rnabioco/clustifyrdata/blob/master/vignettes/otherformats.Rmd"><code>vignettes/otherformats.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rnabioco/clustifyrdatahub/blob/master/vignettes/otherformats.Rmd"><code>vignettes/otherformats.Rmd</code></a></small>
       <div class="hidden name"><code>otherformats.Rmd</code></div>
 
     </div>
@@ -179,13 +182,16 @@
 <a href="#making-new-references-from-objects" class="anchor"></a>Making new references from objects</h2>
 <p>Making scRNA-seq objects into references is assisted by wrappers as well.</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="co"># for both v2 and v3</span>
-<span class="no">seurat_ref</span> <span class="kw">&lt;-</span> <span class="fu"><a href="http://rnabioco.github.io/clustifyr/reference/seurat_ref.html">seurat_ref</a></span>(
-  <span class="kw">seurat_object</span> <span class="kw">=</span> <span class="no">s_small3</span>,
+<span class="no">seurat_ref</span> <span class="kw">&lt;-</span> <span class="fu"><a href="http://rnabioco.github.io/clustifyr/reference/object_ref.html">object_ref</a></span>(
+  <span class="kw">input</span> <span class="kw">=</span> <span class="no">s_small3</span>,
   <span class="kw">cluster_col</span> <span class="kw">=</span> <span class="st">"RNA_snn_res.1"</span>
 )
 
 <span class="co"># and other object types with lookup</span>
-<span class="no">object_ref</span> <span class="kw">&lt;-</span> <span class="fu"><a href="http://rnabioco.github.io/clustifyr/reference/object_ref.html">object_ref</a></span>(<span class="kw">input</span> <span class="kw">=</span> <span class="no">s_small3</span>)</pre></body></html></div>
+<span class="no">object_ref</span> <span class="kw">&lt;-</span> <span class="fu"><a href="http://rnabioco.github.io/clustifyr/reference/object_ref.html">object_ref</a></span>(
+  <span class="kw">input</span> <span class="kw">=</span> <span class="no">sce_small</span>,
+  <span class="kw">cluster_col</span> <span class="kw">=</span> <span class="st">"cell_type1"</span>
+)</pre></body></html></div>
 </div>
   </div>
 
@@ -204,7 +210,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

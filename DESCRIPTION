@@ -17,9 +17,11 @@ URL: https://rnabioco.github.io/clustifyrdata,
     http://github.com/rnabioco/clustifyrdata,
 Depends:
     R (>= 3.6.0)
+    ExperimentHub
 Imports:
-    tibble
+    utils
 Suggests:
+    tibble
     dplyr,
     clustifyr,
     Seurat,
@@ -38,3 +40,5 @@ Remotes:
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
+biocViews: SingleCellData, Annotation, Sequencing, Microarray, ExperimentHub
+BugReports: https://github.com/rnabioco/clustifyrdatahub/issues

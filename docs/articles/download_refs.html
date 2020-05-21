@@ -60,6 +60,9 @@
       <a href="../articles/download_refs.html">Prebuilt references for clustifyr</a>
     </li>
     <li>
+      <a href="../articles/geo-annotations.html">Improving NCBI GEO submissions of scRNA-seq data</a>
+    </li>
+    <li>
       <a href="../articles/otherformats.html">Support for single cell object formats</a>
     </li>
     <li>
@@ -76,7 +79,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="http://github.com/rnabioco/clustifyrdata/">
+  <a href="https://github.com/rnabioco/clustifyrdatahub/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -97,16 +100,16 @@
       <h1 data-toc-skip>Prebuilt references for clustifyr</h1>
             
       
-      <small class="dont-index">Source: <a href="http://github.com/rnabioco/clustifyrdata/blob/master/vignettes/download_refs.Rmd"><code>vignettes/download_refs.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rnabioco/clustifyrdatahub/blob/master/vignettes/download_refs.Rmd"><code>vignettes/download_refs.Rmd</code></a></small>
       <div class="hidden name"><code>download_refs.Rmd</code></div>
 
     </div>
 
     
     
-<div id="download-all-references-from-clustifyrdata-200mb" class="section level2">
+<div id="download-all-references-from-clustifyrdata-300mb" class="section level2">
 <h2 class="hasAnchor">
-<a href="#download-all-references-from-clustifyrdata-200mb" class="anchor"></a>Download all references from <code>clustifyrdata</code> (~200Mb)</h2>
+<a href="#download-all-references-from-clustifyrdata-300mb" class="anchor"></a>Download all references from <code>clustifyrdata</code> (~300Mb)</h2>
 <p>All references used in tutorials and more are available at <a href="https://github.com/rnabioco/clustifyrdata" class="uri">https://github.com/rnabioco/clustifyrdata</a></p>
 <pre class='{"installation"}'><code><a href="https://devtools.r-lib.org//reference/remote-reexports.html"># install.packages("devtools")
 devtools::install_github("rnabioco/clustifyrdata")</a></code></pre>
@@ -114,7 +117,6 @@ devtools::install_github("rnabioco/clustifyrdata")</a></code></pre>
 <div id="list-of-references" class="section level2">
 <h2 class="hasAnchor">
 <a href="#list-of-references" class="anchor"></a>List of references</h2>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="kw pkg">clustifyr</span><span class="kw ns">::</span><span class="no"><a href="http://rnabioco.github.io/clustifyr/reference/downrefs.html">downrefs</a></span>)</pre></body></html></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">name</th>
@@ -166,6 +168,14 @@ devtools::install_github("rnabioco/clustifyrdata")</a></code></pre>
 <td align="left"><a href="https://www.nature.com/articles/s41586-019-0969-x">from</a></td>
 </tr>
 <tr class="even">
+<td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_immgen.rda">ref_immgen</a></td>
+<td align="left">Mouse sorted immune cells</td>
+<td align="left">253</td>
+<td align="left">22134</td>
+<td align="left">mouse</td>
+<td align="left"><a href="https://www.nature.com/articles/ni1008-1091">from</a></td>
+</tr>
+<tr class="odd">
 <td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_hema_microarray.rda">ref_hema_microarray</a></td>
 <td align="left">Human hematopoietic cell microarray</td>
 <td align="left">38</td>
@@ -173,7 +183,7 @@ devtools::install_github("rnabioco/clustifyrdata")</a></code></pre>
 <td align="left">human</td>
 <td align="left"><a href="https://www.cell.com/fulltext/S0092-8674(11)00005-5">from</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_cortex_dev.rda">ref_cortex_dev</a></td>
 <td align="left">Human cortex development scRNA-seq</td>
 <td align="left">47</td>
@@ -181,7 +191,7 @@ devtools::install_github("rnabioco/clustifyrdata")</a></code></pre>
 <td align="left">human</td>
 <td align="left"><a href="https://science.sciencemag.org/content/358/6368/1318.long">from</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_pan_indrop.rda">ref_pan_indrop</a></td>
 <td align="left">Human pancreatic cell scRNA-seq (inDrop)</td>
 <td align="left">14</td>
@@ -189,7 +199,7 @@ devtools::install_github("rnabioco/clustifyrdata")</a></code></pre>
 <td align="left">human</td>
 <td align="left"><a href="https://www.cell.com/fulltext/S2405-4712(16)30266-6">from</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><a href="https://github.com/rnabioco/clustifyrdata/raw/master/data/ref_pan_smartseq2.rda">ref_pan_smartseq2</a></td>
 <td align="left">Human pancreatic cell scRNA-seq (SmartSeq2)</td>
 <td align="left">12</td>
@@ -217,7 +227,7 @@ devtools::install_github("rnabioco/clustifyrdata")</a></code></pre>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

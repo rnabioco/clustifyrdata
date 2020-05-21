@@ -60,6 +60,9 @@
       <a href="../articles/download_refs.html">Prebuilt references for clustifyr</a>
     </li>
     <li>
+      <a href="../articles/geo-annotations.html">Improving NCBI GEO submissions of scRNA-seq data</a>
+    </li>
+    <li>
       <a href="../articles/otherformats.html">Support for single cell object formats</a>
     </li>
     <li>
@@ -76,7 +79,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="http://github.com/rnabioco/clustifyrdata/">
+  <a href="https://github.com/rnabioco/clustifyrdatahub/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -97,7 +100,7 @@
       <h1 data-toc-skip>Reference building for clustifyr</h1>
             
       
-      <small class="dont-index">Source: <a href="http://github.com/rnabioco/clustifyrdata/blob/master/vignettes/references.Rmd"><code>vignettes/references.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rnabioco/clustifyrdatahub/blob/master/vignettes/references.Rmd"><code>vignettes/references.Rmd</code></a></small>
       <div class="hidden name"><code>references.Rmd</code></div>
 
     </div>
@@ -254,8 +257,11 @@
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(<span class="no">symbols</span>, <span class="no">library</span>) <span class="kw">%&gt;%</span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarize</a></span>(<span class="kw">expr</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="no">expr</span>)) <span class="kw">%&gt;%</span>
     <span class="kw pkg">tidyr</span><span class="kw ns">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/spread.html">spread</a></span>(<span class="no">library</span>, <span class="no">expr</span>) <span class="kw">%&gt;%</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>() <span class="kw">%&gt;%</span>
-    <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">column_to_rownames</a></span>(<span class="st">"symbols"</span>) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>()
+  <span class="kw">if</span> (<span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">has_rownames</a></span>(<span class="no">out_matrix</span>)) {
+    <span class="no">out_matrix</span> <span class="kw">&lt;-</span> <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">remove_rownames</a></span>(<span class="no">out_matrix</span>)
+  }
+  <span class="no">out_matrix</span> <span class="kw">&lt;-</span> <span class="no">out_matrix</span> <span class="kw">%&gt;%</span> <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">column_to_rownames</a></span>(<span class="st">"symbols"</span>) <span class="kw">%&gt;%</span>
     <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>()
 
   <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(
@@ -305,11 +311,16 @@
   <span class="fu">rownames_to_column</span>(<span class="st">"sample"</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="kw">sample</span> <span class="kw">=</span> <span class="fu"><a href="https://stringr.tidyverse.org/reference/str_remove.html">str_remove</a></span>(<span class="no">sample</span>, <span class="st">", .*"</span>)) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(<span class="no">sample</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span>(<span class="kw">.funs</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(~ <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log2</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="fl">2</span>^<span class="no">.</span>)))) <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span>(<span class="kw">.funs</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(~ <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log2</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="fl">2</span>^<span class="no">.</span>))))
+
+<span class="kw">if</span> (<span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">has_rownames</a></span>(<span class="no">ref_hema_microarray</span>)) {
+  <span class="no">ref_hema_microarray</span> <span class="kw">&lt;-</span> <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">remove_rownames</a></span>(<span class="no">ref_hema_microarray</span>)
+}
+<span class="no">ref_hema_microarray</span> <span class="kw">&lt;-</span> <span class="no">ref_hema_microarray</span> <span class="kw">%&gt;%</span>
   <span class="fu">column_to_rownames</span>(<span class="st">"sample"</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>()</pre></body></html></div>
 <p>Essentially, any data in matrix form is accepted by <code>clustifyR</code>.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="../reference/ref_hema_microarray.html">ref_hema_microarray</a></span>[<span class="fl">1</span>:<span class="fl">5</span>, <span class="fl">1</span>:<span class="fl">5</span>]
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="https://rnabioco.github.io/clustifyrdata/reference/ref_hema_microarray.html">ref_hema_microarray</a></span>[<span class="fl">1</span>:<span class="fl">5</span>, <span class="fl">1</span>:<span class="fl">5</span>]
 <span class="co">#&gt;        Basophils CD4+ Central Memory CD4+ Effector Memory CD8+ Central Memory</span>
 <span class="co">#&gt; DDR1    6.084244            5.967502             5.933039            6.005278</span>
 <span class="co">#&gt; RFC2    6.280044            6.028615             6.047005            5.992979</span>
@@ -405,7 +416,7 @@ devtools::install_github("rnabioco/clustifyrdata")</a></code></pre>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
