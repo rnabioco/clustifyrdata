@@ -79,7 +79,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/rnabioco/clustifyrdatahub/">
+  <a href="https://github.com/rnabioco/clustifyrdata/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -94,13 +94,13 @@
 
       
 
-      </header><script src="references_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Reference building for clustifyr</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rnabioco/clustifyrdatahub/blob/master/vignettes/references.Rmd"><code>vignettes/references.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rnabioco/clustifyrdata/blob/master/vignettes/references.Rmd"><code>vignettes/references.Rmd</code></a></small>
       <div class="hidden name"><code>references.Rmd</code></div>
 
     </div>
@@ -237,7 +237,7 @@
     )
 
   <span class="co"># convert ids to symbols</span>
-  <span class="no">row_ids_to_symbols</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(<span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">data_frame</a></span>(<span class="kw">ids</span> <span class="kw">=</span> <span class="no">gene_ids</span>), <span class="no">id2symbol</span>, <span class="kw">by</span> <span class="kw">=</span> <span class="st">"ids"</span>)
+  <span class="no">row_ids_to_symbols</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(<span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">data_frame</a></span>(<span class="kw">ids</span> <span class="kw">=</span> <span class="no">gene_ids</span>), <span class="no">id2symbol</span>, <span class="kw">by</span> <span class="kw">=</span> <span class="st">"ids"</span>)
 
   <span class="kw">if</span> (<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">gene_ids</span>) <span class="kw">!=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(<span class="no">row_ids_to_symbols</span>)) {
     <span class="fu"><a href="https://rdrr.io/r/base/warning.html">warning</a></span>(<span class="st">"gene id mapping to symbols produce more or less ids"</span>)
@@ -248,7 +248,7 @@
   <span class="no">out_df</span> <span class="kw">&lt;-</span> <span class="no">read_counts</span> <span class="kw">%&gt;%</span>
     <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>() <span class="kw">%&gt;%</span>
     <span class="kw pkg">tibble</span><span class="kw ns">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames_to_column</a></span>(<span class="st">"gene_id"</span>) <span class="kw">%&gt;%</span>
-    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/join.html">left_join</a></span>(<span class="no">.</span>, <span class="no">row_ids_to_symbols</span>, <span class="kw">by</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gene_id"</span> <span class="kw">=</span> <span class="st">"ids"</span>)) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">left_join</a></span>(<span class="no">.</span>, <span class="no">row_ids_to_symbols</span>, <span class="kw">by</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"gene_id"</span> <span class="kw">=</span> <span class="st">"ids"</span>)) <span class="kw">%&gt;%</span>
     <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(-<span class="no">gene_id</span>) <span class="kw">%&gt;%</span>
     <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="no">symbols</span>, <span class="fu"><a href="https://dplyr.tidyverse.org/reference/reexports.html">everything</a></span>()) <span class="kw">%&gt;%</span>
     <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(!<span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span>(<span class="no">symbols</span>))
@@ -284,7 +284,7 @@
 <span class="no">GSE24759</span> <span class="kw">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"GSE24759/GSE24759_series_matrix.txt"</span>, <span class="kw">skip</span> <span class="kw">=</span> <span class="fl">25</span>, <span class="kw">n_max</span> <span class="kw">=</span> <span class="fl">1</span>)
 
 <span class="co"># read series matrix for full dataset; apply column names</span>
-<span class="no">GSE24759</span> <span class="kw">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"GSE24759//GSE24759_series_matrix.txt"</span>, <span class="kw">skip</span> <span class="kw">=</span> <span class="fl">57</span>, <span class="kw">col_names</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(<span class="no">GSE24759</span>)) <span class="kw">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">rename</a></span>(<span class="kw">ID</span> <span class="kw">=</span> <span class="no">`!Sample_title`</span>)
+<span class="no">GSE24759</span> <span class="kw">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"GSE24759//GSE24759_series_matrix.txt"</span>, <span class="kw">skip</span> <span class="kw">=</span> <span class="fl">57</span>, <span class="kw">col_names</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span>(<span class="no">GSE24759</span>)) <span class="kw">%&gt;%</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span>(<span class="kw">ID</span> <span class="kw">=</span> <span class="no">`!Sample_title`</span>)
 
 <span class="co"># read array metadata table, remove control probes and missing gene symbols</span>
 <span class="no">GPL4685</span> <span class="kw">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"/Users/rf/microarray/GSE24759/GPL4685-15513.txt"</span>, <span class="kw">skip</span> <span class="kw">=</span> <span class="fl">14</span>) <span class="kw">%&gt;%</span>
@@ -293,7 +293,7 @@
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="no">ID</span>, <span class="no">gene_symbol</span>)
 
 <span class="co"># join data and metadata, collapse gene symbols</span>
-<span class="no">GSE24759</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/join.html">inner_join</a></span>(<span class="no">GSE24759</span>, <span class="no">GPL4685</span>) <span class="kw">%&gt;%</span>
+<span class="no">GSE24759</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span>(<span class="no">GSE24759</span>, <span class="no">GPL4685</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(-<span class="no">ID</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span>(<span class="no">gene_symbol</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate_all.html">mutate_at</a></span>(<span class="kw">.vars</span> <span class="kw">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/vars.html">vars</a></span>(-<span class="no">gene_symbol</span>), <span class="kw">.funs</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(~ <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log2</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="fl">2</span>^<span class="no">.</span>))))
@@ -320,7 +320,7 @@
   <span class="fu">column_to_rownames</span>(<span class="st">"sample"</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>()</pre></body></html></div>
 <p>Essentially, any data in matrix form is accepted by <code>clustifyR</code>.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="https://rnabioco.github.io/clustifyrdata/reference/ref_hema_microarray.html">ref_hema_microarray</a></span>[<span class="fl">1</span>:<span class="fl">5</span>, <span class="fl">1</span>:<span class="fl">5</span>]
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="../reference/ref_hema_microarray.html">ref_hema_microarray</a></span>[<span class="fl">1</span>:<span class="fl">5</span>, <span class="fl">1</span>:<span class="fl">5</span>]
 <span class="co">#&gt;        Basophils CD4+ Central Memory CD4+ Effector Memory CD8+ Central Memory</span>
 <span class="co">#&gt; DDR1    6.084244            5.967502             5.933039            6.005278</span>
 <span class="co">#&gt; RFC2    6.280044            6.028615             6.047005            5.992979</span>

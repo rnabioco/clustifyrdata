@@ -79,7 +79,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/rnabioco/clustifyrdatahub/">
+  <a href="https://github.com/rnabioco/clustifyrdata/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -94,13 +94,13 @@
 
       
 
-      </header><script src="benchmark_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Benchmarking clustifyr</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/rnabioco/clustifyrdatahub/blob/master/vignettes/benchmark.Rmd"><code>vignettes/benchmark.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/rnabioco/clustifyrdata/blob/master/vignettes/benchmark.Rmd"><code>vignettes/benchmark.Rmd</code></a></small>
       <div class="hidden name"><code>benchmark.Rmd</code></div>
 
     </div>
@@ -113,8 +113,8 @@
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">clustifyr</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">clustifyrdata</span>)
 
-<span class="no">l_mat</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="https://rnabioco.github.io/clustifyrdata/reference/MCA_lung_mat.html">MCA_lung_mat</a></span>
-<span class="no">l_meta</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="https://rnabioco.github.io/clustifyrdata/reference/MCA_lung_meta.html">MCA_lung_meta</a></span>
+<span class="no">l_mat</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="../reference/MCA_lung_mat.html">MCA_lung_mat</a></span>
+<span class="no">l_meta</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="../reference/MCA_lung_meta.html">MCA_lung_meta</a></span>
 
 <span class="co"># find lung references, remove generic terms</span>
 <span class="no">lung_cols</span> <span class="kw">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grep</a></span>(<span class="st">"-Lung"</span>,
@@ -145,10 +145,10 @@
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">res_allgenes</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"MCA annotation"</span>, <span class="st">"clustifyr call"</span>, <span class="st">"r"</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">end</span> - <span class="no">start</span>)
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   1.967   0.476   2.456</span>
+<span class="co">#&gt;   2.331   0.588   2.969</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">res_allgenes</span>, <span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(<span class="no">res_allgenes</span>))
 <span class="co">#&gt; # A tibble: 32 x 3</span>
-<span class="co">#&gt; # Groups:   Annotation [32]</span>
+<span class="co">#&gt; # Groups:   MCA annotation [32]</span>
 <span class="co">#&gt;    `MCA annotation`                `clustifyr call`                            r</span>
 <span class="co">#&gt;    &lt;chr&gt;                           &lt;chr&gt;                                   &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 Alveolar macrophage_Ear2 high(… alveolar macrophage-Lung                0.878</span>
@@ -187,9 +187,9 @@
 <div id="benchmark-2--using-sorted-microarray-data-to-classify-10x-pbmc-example-data-available-in-clustifyrdata-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#benchmark-2--using-sorted-microarray-data-to-classify-10x-pbmc-example-data-available-in-clustifyrdata-package" class="anchor"></a>benchmark 2. Using sorted microarray data to classify 10x PBMC example data, available in <code>clustifyrdata</code> package</h2>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">full_pbmc_matrix</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="https://rnabioco.github.io/clustifyrdata/reference/pbmc_matrix.html">pbmc_matrix</a></span>
-<span class="no">full_pbmc_meta</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="http://rnabioco.github.io/clustifyr/reference/pbmc_meta.html">pbmc_meta</a></span>
-<span class="no">microarray_ref</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="https://rnabioco.github.io/clustifyrdata/reference/ref_hema_microarray.html">ref_hema_microarray</a></span>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">full_pbmc_matrix</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="../reference/pbmc_matrix.html">pbmc_matrix</a></span>
+<span class="no">full_pbmc_meta</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="../reference/pbmc_meta.html">pbmc_meta</a></span>
+<span class="no">microarray_ref</span> <span class="kw">&lt;-</span> <span class="kw pkg">clustifyrdata</span><span class="kw ns">::</span><span class="no"><a href="../reference/ref_hema_microarray.html">ref_hema_microarray</a></span>
 
 <span class="no">start</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/proc.time.html">proc.time</a></span>()
 
@@ -208,10 +208,10 @@
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">res2</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"manual annotation"</span>, <span class="st">"clustifyr call"</span>, <span class="st">"r"</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">end</span> - <span class="no">start</span>)
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.082   0.004   0.088</span>
+<span class="co">#&gt;   0.093   0.004   0.098</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">res2</span>, <span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(<span class="no">res2</span>))
 <span class="co">#&gt; # A tibble: 9 x 3</span>
-<span class="co">#&gt; # Groups:   cluster [9]</span>
+<span class="co">#&gt; # Groups:   manual annotation [9]</span>
 <span class="co">#&gt;   `manual annotation` `clustifyr call`                    r</span>
 <span class="co">#&gt;   &lt;chr&gt;               &lt;chr&gt;                           &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 Memory CD4 T        CD4+ Effector Memory            0.585</span>
