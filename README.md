@@ -9,10 +9,11 @@
 status](https://github.com/rnabioco/clustifyrdata/workflows/R-CMD-check/badge.svg)](https://github.com/rnabioco/clustifyrdata/actions)
 <!-- badges: end -->
 
-clustifyrdata provides 41 external data sets for cell-type assignment
+clustifyrdata provides 42 external data sets for cell-type assignment
 with [clustifyr](https://rnabioco.github.io/clustifyr) and [reproducible
 scripts](https://github.com/rnabioco/clustifyrdata/tree/master/data-raw)
-to build data objects.
+to build data
+objects.
 
 ## Commonly used references:
 
@@ -33,6 +34,9 @@ See the [reference
 page](https://rnabioco.github.io/clustifyrdata/reference) for available
 data sets, and [individual ref download
 page](https://rnabioco.github.io/clustifyrdata/articles/download_refs.html).
+Additionally these datasets will be made available as a Bioconductor
+ExperimentHub
+([`clustifyrdatahub`](https://github.com/rnabioco/clustifyrdatahub))
 
 Data sets have uniform suffixes: - `ref_*` : the prebuilt reference
 expression matrix.
