@@ -27,7 +27,7 @@ clustifyrdata provides `r length(tools::list_files_with_type("data", type = "dat
 knitr::kable(clustifyrdata::downrefs)
 ```
 
-See the [reference page](https://rnabioco.github.io/clustifyrdata/reference) for available data sets, and [individual ref download page](https://rnabioco.github.io/clustifyrdata/articles/download_refs.html).
+See the [reference page](https://rnabioco.github.io/clustifyrdata/reference) for available data sets, and [individual ref download page](https://rnabioco.github.io/clustifyrdata/articles/download_refs.html). Additionally these datasets will be made available as a Bioconductor ExperimentHub ([`clustifyrdatahub`](https://github.com/rnabioco/clustifyrdatahub))
 
 Data sets have uniform suffixes:
 - `ref_*` : the prebuilt reference expression matrix.
