@@ -9,14 +9,80 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Research Focus
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Annotation of Single Cell RNA-sequencing experiments can be difficult given the lack of functional metadata and the various formats of presenting a processed counts matrix. The NCBI Gene Expression Omnibus (GEO) database currently contains the largest amount of publicly available scRNA-seq data for researchers. This vignette focuses on creation of a single cell atlas for a mouse organism with cell types originating from NCBI GEO records. The goal is to not only account for the maximum number of cell types possible from NCBI GEO but also to include different representations/treatments of the same cell. A single cell atlas for mice organisms would boost the efficacy of clustifyr since it would be able to give accurate benchmarks of cell types from any novel scRNA-seq experiment without proper metadata and cell type annotation. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Generating Reference Matrices
 
-```{r cars}
-summary(cars)
+Individual reference matrices can be generated which show gene expression values per individual cell type from a scRNA-seq experiment. In order to generate the reference matrices, the processed data from GEO such as the counts matrix and metadata table will be loaded in. The counts matrix will be checked for containing raw counts (counts matrix may have been log or scalar normalized). This is done with the help of a `check_raw_counts()` function. After the counts matrix is checked to contain raw counts, the data will be normalized with the help of the `NormalizeData()` function from Seurat. From there, the counts matrix and metadata table will be inputted as arguments into the clustifyr function `average_clusters()` which will output the reference matrix. The matrix can then be stored into an RDS file.
+
+```{r Check Raw Counts}
+checkRawCounts <- function(GSEMatrix, max_log_value = 50)
+{
+  if(!is.matrix(GSEMatrix))
+  {
+    GSEMatrix <- as.matrix(GSEMatrix)
+  }
+  if (is.integer(GSEMatrix))
+  {
+    return("raw counts")
+  }
+  else if (is.double(GSEMatrix))
+  {
+    if (all(GSEMatrix == floor(GSEMatrix)))
+    {
+      return("raw counts")
+    }
+    if(max(GSEMatrix) > max_log_value)
+    {
+      return("normalized")
+    }
+    else if (min(GSEMatrix) < 0)
+    {
+      stop("negative values detected, likely scaled data")
+    }
+    else
+    {
+      return("log-normalized")
+    }
+  }
+  else
+  {
+    stop("unknown matrix format: ", typeof(GSEMatrix))
+  }
+}
+```
+
+```{r Reference Matrix Generation}
+#An example of reference matrix generation for GEO record GSE124952
+library(dplyr)
+library(Seurat)
+library(patchwork)
+library(clustifyr)
+library(tidyverse)
+library(digest)
+library(here)
+
+mat_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_expression_matrix.csv.gz")
+mat_PFC <- mat_PFC %>%
+  column_to_rownames('X1')
+
+meta_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_meta_data.csv.gz")
+meta_PFC
+
+# figure out project root
+proj_dir <- here()
+utils <- file.path(proj_dir, "Reference-Matrix-Generation", "R", "utils", "utils.r")
+
+source(utils)
+checkRawCounts(as.matrix(mat_PFC))
+
+GSE124952Normalized <- NormalizeData(mat_PFC)
+GSE124952Normalized
+
+new_ref_matrix <- average_clusters(mat = GSE124952Normalized, metadata = meta_PFC$CellType, if_log = FALSE)
+saveRDS(new_ref_matrix, "GSE124952.rds")
 ```
 
 ## Including Plots
