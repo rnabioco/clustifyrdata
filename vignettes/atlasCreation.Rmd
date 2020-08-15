@@ -85,12 +85,125 @@ new_ref_matrix <- average_clusters(mat = GSE124952Normalized, metadata = meta_PF
 saveRDS(new_ref_matrix, "GSE124952.rds")
 ```
 
-## Including Plots
+## Concatenating Reference Matrices into Cell Atlas
 
-You can also embed plots, for example:
+Once the individual reference matrices are generated, they can be concatenated into a single cell atlas encompassing all cells in an organism. In this case, all of the reference matrices are stored as RDS files in separate folder. In order to combine them, the union of all genes from a mice organism and genes present in the reference matrices will be applied. This will ensure that the reference matrices are all of the same row length which will make them easy to combine with a function such as `crow()`. The union will be found with the `append_genes()` function and the atlas will be built with the `build_atlas()` function. 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r append_genes}
+appendGenes <- function(geneVector, GSEMatrix)
+{
+  rownamesGSEMatrix <- rownames(GSEMatrix) #Get rownames from GSEMatrix (new GSE file)
+
+  rowCountHumanGenes <- nrow(geneVector) #Calculate number of rows from list of full human genes
+  rowCountNewGSEFile <- nrow(GSEMatrix) #Calculate number of rows of GSE matrix
+
+  missing_rows <- setdiff(geneVector, rownamesGSEMatrix) #Use setdiff function to figure out rows which are different/missing from GSE matrix
+
+  zeroExpressionMatrix <- matrix(0, nrow = length(missing_rows), ncol = ncol(GSEMatrix)) #Create a placeholder matrix with zeroes and missing_rows length as row length
+
+  rownames(zeroExpressionMatrix) <- missing_rows #Assign row names
+  colnames(zeroExpressionMatrix) <- colnames(GSEMatrix) #Assign column names
+
+  fullMatrix <- rbind(GSEMatrix, zeroExpressionMatrix) #Bind GSEMatrix and zeroExpressionMatrix together
+
+  #Reorder matrix
+  fullMatrix <- fullMatrix[geneVector, ] #Reorder fullMatrix to preserve gene order
+  return(fullMatrix) #Return fullMatrix
+}
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r build_atlas}
+build_atlas <- function(matrix_fns,
+                        genes_fn,
+                        output_fn = NULL){
+
+  genesVector <- read_lines(genes_fn)
+
+  ref_mats <- lapply(matrix_fns, readRDS)
+
+  if(is.null(names(matrix_fns))){
+    names(ref_mats) <- basename(ref_matrices_fns) %>% str_remove(".rds$")
+  } else {
+    names(ref_mats) <- names(matrix_fns)
+  }
+
+  # iterate over list and get new matrices
+  new_mats <- list()
+  for(i in seq_along(ref_mats)){
+    # standardize genes in matrix
+    mat <- appendGenes(geneVector = genesVector,
+                       GSEMatrix = as.matrix(ref_mats[[i]]))
+    # get study name
+    mat_name <- names(ref_mats)[i]
+
+    # append study name to cell type names
+    new_cols <- paste0(colnames(mat),
+                       " (",
+                       mat_name,
+                       ")")
+    colnames(mat) <- new_cols
+
+    # assign to list
+    new_mats[[i]] <- mat
+  }
+
+  # cbind a list of matrices
+  atlas <- do.call(cbind, new_mats)
+
+  if(!is.null(output_fn)){
+    saveRDS(atlas, output_fn)
+  } else {
+    return(atlas)
+  }
+
+}
+
+```
+
+```{r Building atlas with reference matrices}
+library(dplyr)
+library(Seurat)
+library(clustifyr)
+library(tidyverse)
+library(readr)
+library(digest)
+library(here)
+
+# figure out project root
+proj_dir <- here()
+
+# get scripts
+source(file.path(proj_dir, "Reference-Matrix-Generation", "R", "utils", "utils.r"))
+
+# path to matrices
+ref_matrix_dir <- file.path(proj_dir, "Reference-Matrix-Generation", "ref_matrices", "musMusculus")
+
+# find all .rds files in the ref_matrices directory,
+# name vector with filename without .rds
+ref_matrices_fns <- list.files(ref_matrix_dir,
+                               pattern = ".rds$",
+                               full.names = TRUE,
+                               recursive = TRUE)
+names(ref_matrices_fns) <- basename(ref_matrices_fns) %>% str_remove(".rds$")
+
+# remove studies in records_to_drop
+records_to_drop <- c("GSE137710MouseSpleen")
+idx_to_keep <- which(!names(ref_matrices_fns) %in% records_to_drop)
+ref_matrices_fns <- ref_matrices_fns[idx_to_keep]
+
+# path to mouse genes
+mouse_genes_fn <- file.path(proj_dir, "Reference-Matrix-Generation",
+                            "data",
+                            "geneList",
+                            "mouse_genes.tsv.gz")
+
+# output filename for atlas
+atlas_dir <- file.path(proj_dir, "atlas", "musMusculus")
+dir.create(atlas_dir, showWarnings = FALSE, recursive = TRUE)
+atlas_fn <- file.path(atlas_dir, "MouseAtlas.rds")
+
+build_atlas(ref_matrices_fns, mouse_genes_fn, atlas_fn)
+```
+
+## Atlas Utility
+The mouse cell atlas created using the GEO records and the Tabula Muris Cell atlas totaled 321 cell types. The inferences using clustifyr were observed to be somewhat specific  
