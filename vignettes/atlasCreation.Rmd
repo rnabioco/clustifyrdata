@@ -15,7 +15,7 @@ Annotation of Single Cell RNA-sequencing experiments can be difficult given the 
 
 ## Generating Reference Matrices
 
-Individual reference matrices can be generated which show gene expression values per individual cell type from a scRNA-seq experiment. In order to generate the reference matrices, the processed data from GEO such as the counts matrix and metadata table will be loaded in. The counts matrix will be checked for containing raw counts (counts matrix may have been log or scalar normalized). This is done with the help of a `check_raw_counts()` function. After the counts matrix is checked to contain raw counts, the data will be normalized with the help of the `NormalizeData()` function from Seurat. From there, the counts matrix and metadata table will be inputted as arguments into the clustifyr function `average_clusters()` which will output the reference matrix. The matrix can then be stored into an RDS file.
+Individual reference matrices can be generated which show average gene expression values per individual cell type from a scRNA-seq experiment. In order to generate the reference matrices, the processed data from GEO such as the counts matrix and metadata table will be loaded in. The counts matrix will be checked for containing raw counts (counts matrix may have been previously log or scalar normalized). This is done with the help of a `check_raw_counts()` function. After the counts matrix is checked to contain raw counts, the data will be normalized with the help of the `NormalizeData()` function from Seurat. From there, the counts matrix and metadata table will be inputted as arguments into the clustifyr function `average_clusters()` which will output the reference matrix. The matrix can then be stored into an RDS file.
 
 ```{r Check Raw Counts}
 checkRawCounts <- function(GSEMatrix, max_log_value = 50)
@@ -87,7 +87,7 @@ saveRDS(new_ref_matrix, "GSE124952.rds")
 
 ## Concatenating Reference Matrices into Cell Atlas
 
-Once the individual reference matrices are generated, they can be concatenated into a single cell atlas encompassing all cells in an organism. In this case, all of the reference matrices are stored as RDS files in separate folder. In order to combine them, the union of all genes from a mice organism and genes present in the reference matrices will be applied. This will ensure that the reference matrices are all of the same row length which will make them easy to combine with a function such as `crow()`. The union will be found with the `append_genes()` function and the atlas will be built with the `build_atlas()` function. 
+Once the individual reference matrices are generated, they can be concatenated into a single cell atlas encompassing all cells in an organism. In this case, all of the reference matrices are stored as RDS files in separate folder. In order to combine them, the union of all genes from a mice organism and genes present in the reference matrices will be applied. This will ensure that the reference matrices are all of the same row length which will make them easy to combine with a function such as `cbind()`. The union will be found with the `append_genes()` function and the atlas will be built with the `build_atlas()` function. 
 
 ```{r append_genes}
 appendGenes <- function(geneVector, GSEMatrix)
@@ -179,7 +179,7 @@ source(file.path(proj_dir, "Reference-Matrix-Generation", "R", "utils", "utils.r
 ref_matrix_dir <- file.path(proj_dir, "Reference-Matrix-Generation", "ref_matrices", "musMusculus")
 
 # find all .rds files in the ref_matrices directory,
-# name vector with filename without .rds
+# name vector with file name without .rds
 ref_matrices_fns <- list.files(ref_matrix_dir,
                                pattern = ".rds$",
                                full.names = TRUE,
@@ -197,7 +197,7 @@ mouse_genes_fn <- file.path(proj_dir, "Reference-Matrix-Generation",
                             "geneList",
                             "mouse_genes.tsv.gz")
 
-# output filename for atlas
+# output file name for atlas
 atlas_dir <- file.path(proj_dir, "atlas", "musMusculus")
 dir.create(atlas_dir, showWarnings = FALSE, recursive = TRUE)
 atlas_fn <- file.path(atlas_dir, "MouseAtlas.rds")
@@ -206,4 +206,4 @@ build_atlas(ref_matrices_fns, mouse_genes_fn, atlas_fn)
 ```
 
 ## Atlas Utility
-The mouse cell atlas created using the GEO records and the Tabula Muris Cell atlas totaled 321 cell types. The inferences using clustifyr were observed to be somewhat specific  
+The mouse cell atlas created using the GEO records and the Tabula Muris Cell atlas totaled 321 cell types. The inferences using clustifyr were observed to assign general cell types for major cell groups. However, more specific annotations were not possible due to the relatively small amount of cell types available. Next steps for the atlas would be to integrate a larger quantity of cell types but also different representations of the same cell types. This would allow the atlas to work correctly for benchmarking any new scRNA-seq data. 
