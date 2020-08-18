@@ -121,7 +121,7 @@ GSE124952_ref_matrices_fns <- list.files(GSE124952Dir,
                                full.names = TRUE,
                                recursive = TRUE)
 names(GSE113049_ref_matrices_fns) <- basename(GSE113049_ref_matrices_fns) %>% str_remove(".rds$")
-names(GSE124952_ref_matrices_fns) <- basename(GSE24952_ref_matrices_fns) %>% str_remove(".rds$")
+names(GSE124952_ref_matrices_fns) <- basename(GSE124952_ref_matrices_fns) %>% str_remove(".rds$")
 
 # path to mouse genes
 mouse_genes_fn <- file.path(proj_dir, "Reference-Matrix-Generation",
