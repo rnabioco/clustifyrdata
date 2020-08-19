@@ -1,5 +1,5 @@
 ---
-title: "atlasCreation.rmd"
+title: "Concatenating multiple references"
 author: "Sidhant Puntambekar"
 date: "8/14/2020"
 output: html_document
@@ -24,10 +24,8 @@ For this vignette, two average gene expression reference matrices will be genera
 ```{r Reference Matrix Generation GSE113049}
 library(dplyr)
 library(Seurat)
-library(patchwork)
 library(clustifyr)
 library(tidyverse)
-library(digest)
 
 mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_count_matrix.tsv.gz", skip = 1, col_names = F)
 ids_mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_count_matrix.tsv.gz", n_max = 1, col_names = F)
@@ -47,18 +45,15 @@ checkRawCounts(as.matrix(mat_Lung))
 GSE113049Normalized <- NormalizeData(mat_Lung)
 GSE113049Normalized
 
-new_ref_matrix <- average_clusters(mat = GSE113049Normalized, metadata = meta_Lung$cell_type, if_log = FALSE, output_log = FALSE)
-saveRDS(new_ref_matrix, "GSE113049.rds")
+GSE113049Ref_Matrix <- average_clusters(mat = GSE113049Normalized, metadata = meta_Lung$cell_type, if_log = FALSE, output_log = FALSE)
 ```
 
 ```{r Reference Matrix Generation GSE124952}
 #An example of reference matrix generation for GEO record GSE124952
 library(dplyr)
 library(Seurat)
-library(patchwork)
 library(clustifyr)
 library(tidyverse)
-library(digest)
 library(here)
 
 mat_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_expression_matrix.csv.gz")
@@ -78,8 +73,7 @@ checkRawCounts(as.matrix(mat_PFC))
 GSE124952Normalized <- NormalizeData(mat_PFC)
 GSE124952Normalized
 
-new_ref_matrix <- average_clusters(mat = GSE124952Normalized, metadata = meta_PFC$CellType, if_log = FALSE)
-saveRDS(new_ref_matrix, "GSE124952.rds")
+GSE124952Ref_Matrix <- average_clusters(mat = GSE124952Normalized, metadata = meta_PFC$CellType, if_log = FALSE)
 ```
 
 ## Concatenating Reference Matrices into Cell Atlas
@@ -98,7 +92,6 @@ library(clustifyr)
 library(tidyverse)
 library(readr)
 library(digest)
-library(here)
 
 # figure out project root
 proj_dir <- here()
@@ -121,7 +114,7 @@ GSE124952_ref_matrices_fns <- list.files(GSE124952Dir,
                                full.names = TRUE,
                                recursive = TRUE)
 names(GSE113049_ref_matrices_fns) <- basename(GSE113049_ref_matrices_fns) %>% str_remove(".rds$")
-names(GSE124952_ref_matrices_fns) <- basename(GSE24952_ref_matrices_fns) %>% str_remove(".rds$")
+names(GSE124952_ref_matrices_fns) <- basename(GSE124952_ref_matrices_fns) %>% str_remove(".rds$")
 
 # path to mouse genes
 mouse_genes_fn <- file.path(proj_dir, "Reference-Matrix-Generation",
