@@ -39,7 +39,7 @@ meta_Lung
 sum(colnames(mat_Lung) %in% meta_Lung$cell_type)
 ncol(mat_Lung)
 
-source("~/Reference-Matrix-Generation/R/utils/check.r")
+checkRawCounts <- clustifyr::ch
 checkRawCounts(as.matrix(mat_Lung))
 
 GSE113049Normalized <- NormalizeData(mat_Lung)
@@ -89,45 +89,17 @@ The following code will demonstrate the concatenation of the GSE113049 and GSE12
 library(dplyr)
 library(Seurat)
 library(clustifyr)
+library(clustifyrdata)
 library(tidyverse)
 library(readr)
 library(digest)
 
-# figure out project root
-proj_dir <- here()
 
-# get scripts
-source(file.path(proj_dir, "Reference-Matrix-Generation", "R", "utils", "utils.r"))
-
-# path to matrices
-GSE113049Dir <- file.path(proj_dir, "Reference-Matrix-Generation", "ref_matrices", "musMusculus", "GSE113049")
-GSE124952Dir <- file.path(proj_dir, "Reference-Matrix-Generation", "ref_matrices", "musMusculus", "GSE124952")
-
-# find all .rds files in the ref_matrices directory,
-# name vector with file name without .rds
-GSE113049_ref_matrices_fns <- list.files(GSE113049Dir,
-                               pattern = ".rds$",
-                               full.names = TRUE,
-                               recursive = TRUE)
-GSE124952_ref_matrices_fns <- list.files(GSE124952Dir,
-                               pattern = ".rds$",
-                               full.names = TRUE,
-                               recursive = TRUE)
-names(GSE113049_ref_matrices_fns) <- basename(GSE113049_ref_matrices_fns) %>% str_remove(".rds$")
-names(GSE124952_ref_matrices_fns) <- basename(GSE124952_ref_matrices_fns) %>% str_remove(".rds$")
 
 # path to mouse genes
-mouse_genes_fn <- file.path(proj_dir, "Reference-Matrix-Generation",
-                            "data",
-                            "geneList",
-                            "mouse_genes.tsv.gz")
-
-# output file name for atlas
-atlas_dir <- file.path(proj_dir, "atlas", "musMusculus")
-dir.create(atlas_dir, showWarnings = FALSE, recursive = TRUE)
-atlas_fn <- file.path(atlas_dir, "MouseAtlas.rds")
-
-build_atlas(ref_matrices_fns, mouse_genes_fn, atlas_fn)
+mouse_genes_fn <- clustifyr::mouse_genes_10x
+references_to_combine <- list(GSE113049Ref_Matrix, GSE124952Ref_Matrix)
+smallAtlas <- atlas <- build_atlas(NULL, human_genes_10x, references_to_combine, NULL)
 ```
 
 ## Atlas Utility
