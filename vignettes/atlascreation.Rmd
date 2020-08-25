@@ -85,9 +85,6 @@ library(Seurat)
 library(clustifyr)
 library(tidyverse)
 library(readr)
-library(digest)
-
-
 
 # path to mouse genes
 mouse_genes_fn <- clustifyr::mouse_genes_10x
