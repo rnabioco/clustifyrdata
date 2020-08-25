@@ -39,8 +39,7 @@ meta_Lung
 sum(colnames(mat_Lung) %in% meta_Lung$cell_type)
 ncol(mat_Lung)
 
-checkRawCounts <- clustifyr::ch
-checkRawCounts(as.matrix(mat_Lung))
+clustifyr::check_raw_counts(as.matrix(mat_Lung))
 
 GSE113049Normalized <- NormalizeData(mat_Lung)
 GSE113049Normalized
@@ -63,12 +62,7 @@ mat_PFC <- mat_PFC %>%
 meta_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_meta_data.csv.gz")
 meta_PFC
 
-# figure out project root
-proj_dir <- here()
-utils <- file.path(proj_dir, "Reference-Matrix-Generation", "R", "utils", "utils.r")
-
-source(utils)
-checkRawCounts(as.matrix(mat_PFC))
+clustifyr::check_raw_counts(as.matrix(mat_PFC))
 
 GSE124952Normalized <- NormalizeData(mat_PFC)
 GSE124952Normalized
@@ -89,7 +83,6 @@ The following code will demonstrate the concatenation of the GSE113049 and GSE12
 library(dplyr)
 library(Seurat)
 library(clustifyr)
-library(clustifyrdata)
 library(tidyverse)
 library(readr)
 library(digest)
@@ -99,7 +92,7 @@ library(digest)
 # path to mouse genes
 mouse_genes_fn <- clustifyr::mouse_genes_10x
 references_to_combine <- list(GSE113049Ref_Matrix, GSE124952Ref_Matrix)
-smallAtlas <- atlas <- build_atlas(NULL, human_genes_10x, references_to_combine, NULL)
+smallAtlas <- clustifyr::build_atlas(NULL, human_genes_10x, references_to_combine, NULL)
 ```
 
 ## Atlas Utility
