@@ -5,7 +5,7 @@
 \alias{ref_hema_microarray}
 \title{Matrix of average gene detection by microarray on sorted immune cell populations}
 \format{
-An object of class \code{matrix} with 21246 rows and 38 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 21246 rows and 38 columns.
 }
 \source{
 [https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE24759]

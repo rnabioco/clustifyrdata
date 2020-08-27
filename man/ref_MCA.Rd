@@ -5,7 +5,7 @@
 \alias{ref_MCA}
 \title{Matrix of average gene expression for single-cell RNA-seq.}
 \format{
-An object of class \code{matrix} with 8601 rows and 713 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 8601 rows and 713 columns.
 }
 \source{
 <https://figshare.com/s/865e694ad06d5857db4b>

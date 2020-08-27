@@ -5,7 +5,7 @@
 \alias{ref_mouse.rnaseq}
 \title{Matrix of average gene expression from general mouse cell type data}
 \format{
-An object of class \code{matrix} with 21214 rows and 28 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 21214 rows and 28 columns.
 }
 \source{
 ["SingleR"]

@@ -25,7 +25,6 @@ For this vignette, two average gene expression reference matrices will be genera
 
 ```{r Reference Matrix Generation GSE113049}
 #An example of reference matrix generation for GEO record GSE113049
-library(dplyr)
 library(Seurat)
 library(clustifyr)
 library(tidyverse)

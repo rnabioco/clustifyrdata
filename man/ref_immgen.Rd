@@ -5,7 +5,7 @@
 \alias{ref_immgen}
 \title{Matrix of average gene expression from immgen data}
 \format{
-An object of class \code{matrix} with 22134 rows and 253 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 22134 rows and 253 columns.
 }
 \source{
 ["SingleR"]

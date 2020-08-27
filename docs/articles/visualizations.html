@@ -54,6 +54,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/atlascreation.html">Concatenating multiple references</a>
+    </li>
+    <li>
       <a href="../articles/benchmark.html">Benchmarking clustifyr</a>
     </li>
     <li>
@@ -94,7 +97,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="visualizations_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Visualization of clustifyr results</h1>
@@ -177,6 +180,7 @@
   <span class="kw">query_genes</span> <span class="kw">=</span> <span class="no">pbmc_vargenes</span>, <span class="co"># list of highly varible genes identified with Seurat</span>
   <span class="kw">cluster_col</span> <span class="kw">=</span> <span class="st">"seurat_clusters"</span> <span class="co"># name of column in meta.data containing cell clusters</span>
 )
+<span class="co">#&gt; [1] "use"</span>
 
 <span class="co"># Create heatmap using the clustifyr correlation matrix</span>
 <span class="fu"><a href="http://rnabioco.github.io/clustifyr/reference/plot_cor_heatmap.html">plot_cor_heatmap</a></span>(
@@ -220,7 +224,9 @@
   <span class="kw">ref_mat</span> <span class="kw">=</span> <span class="no">cbmc_ref</span>, <span class="co"># reference matrix containing bulk RNA-seq data for each cell type</span>
   <span class="kw">cluster_col</span> <span class="kw">=</span> <span class="st">"seurat_clusters"</span>, <span class="co"># name of column in meta.data containing cell clusters</span>
   <span class="kw">n</span> <span class="kw">=</span> <span class="fl">5</span> <span class="co"># expand cluster number n-fold for overclustering</span>
-)</pre></body></html></div>
+)
+<span class="co">#&gt; [1] "use"</span>
+<span class="co">#&gt; [1] "use"</span></pre></body></html></div>
 <p><img src="visualizations_files/figure-html/Overclustering%20test-1.png" width="960" style="display: block; margin: auto;"></p>
 <p>The cell types from the bulk RNA-seq reference matrix can also be mixed together using the <code>make_comb_ref()</code> function to assess the specificity of the cell type assignments. If a cluster shows a higher correlation when using the mixed reference matrix, this suggests that the cluster contains multiple cell types.</p>
 <div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="co"># Create reference containing different combinations of the bulk RNA-seq data</span>

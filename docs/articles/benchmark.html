@@ -54,6 +54,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/atlascreation.html">Concatenating multiple references</a>
+    </li>
+    <li>
       <a href="../articles/benchmark.html">Benchmarking clustifyr</a>
     </li>
     <li>
@@ -94,7 +97,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="benchmark_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Benchmarking clustifyr</h1>
@@ -133,6 +136,7 @@
   <span class="kw">metadata</span> <span class="kw">=</span> <span class="no">l_meta</span>,
   <span class="kw">cluster_col</span> <span class="kw">=</span> <span class="st">"Annotation"</span>
 )
+<span class="co">#&gt; [1] "use"</span>
 
 <span class="no">res_allgenes</span> <span class="kw">&lt;-</span> <span class="fu"><a href="http://rnabioco.github.io/clustifyr/reference/cor_to_call.html">cor_to_call</a></span>(
   <span class="kw">cor_mat</span> <span class="kw">=</span> <span class="no">res</span>,
@@ -145,10 +149,10 @@
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">res_allgenes</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"MCA annotation"</span>, <span class="st">"clustifyr call"</span>, <span class="st">"r"</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">end</span> - <span class="no">start</span>)
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   2.331   0.588   2.969</span>
+<span class="co">#&gt;   2.027   0.495   2.531</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">res_allgenes</span>, <span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(<span class="no">res_allgenes</span>))
 <span class="co">#&gt; # A tibble: 32 x 3</span>
-<span class="co">#&gt; # Groups:   MCA annotation [32]</span>
+<span class="co">#&gt; # Groups:   Annotation [32]</span>
 <span class="co">#&gt;    `MCA annotation`                `clustifyr call`                            r</span>
 <span class="co">#&gt;    &lt;chr&gt;                           &lt;chr&gt;                                   &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 Alveolar macrophage_Ear2 high(… alveolar macrophage-Lung                0.878</span>
@@ -200,6 +204,7 @@
   <span class="kw">query_genes</span> <span class="kw">=</span> <span class="no">pbmc_vargenes</span>[<span class="fl">1</span>:<span class="fl">500</span>],
   <span class="kw">cluster_col</span> <span class="kw">=</span> <span class="st">"classified"</span>
 )
+<span class="co">#&gt; [1] "use"</span>
 
 <span class="no">res2</span> <span class="kw">&lt;-</span> <span class="fu"><a href="http://rnabioco.github.io/clustifyr/reference/cor_to_call.html">cor_to_call</a></span>(<span class="no">res</span>, <span class="kw">threshold</span> <span class="kw">=</span> <span class="fl">0.5</span>)
 
@@ -208,10 +213,10 @@
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">res2</span>) <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"manual annotation"</span>, <span class="st">"clustifyr call"</span>, <span class="st">"r"</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">end</span> - <span class="no">start</span>)
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.093   0.004   0.098</span>
+<span class="co">#&gt;   0.091   0.006   0.096</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">res2</span>, <span class="kw">n</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span>(<span class="no">res2</span>))
 <span class="co">#&gt; # A tibble: 9 x 3</span>
-<span class="co">#&gt; # Groups:   manual annotation [9]</span>
+<span class="co">#&gt; # Groups:   cluster [9]</span>
 <span class="co">#&gt;   `manual annotation` `clustifyr call`                    r</span>
 <span class="co">#&gt;   &lt;chr&gt;               &lt;chr&gt;                           &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 Memory CD4 T        CD4+ Effector Memory            0.585</span>

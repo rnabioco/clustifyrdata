@@ -5,7 +5,7 @@
 \alias{pbmc_avg}
 \title{Matrix of average gene expression per cluster from single-cell RNA-seq PBMCs.}
 \format{
-An object of class \code{matrix} with 13714 rows and 9 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 13714 rows and 9 columns.
 }
 \source{
 <https://support.10xgenomics.com/single-cell-gene-expression/datasets/2.1.0/pbmc4k>

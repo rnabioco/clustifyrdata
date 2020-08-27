@@ -5,7 +5,7 @@
 \alias{yan_ref}
 \title{Matrix of average gene expression from `yan` human embryo data}
 \format{
-An object of class \code{matrix} with 20214 rows and 6 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 20214 rows and 6 columns.
 }
 \source{
 ["scmap"]

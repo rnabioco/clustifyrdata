@@ -5,7 +5,7 @@
 \alias{ref_moca_main}
 \title{Matrix of average gene expression per cluster from single-cell sci-RNA-seq3 from Mouse Organogenesis Cell Atlas.}
 \format{
-An object of class \code{matrix} with 26183 rows and 37 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 26183 rows and 37 columns.
 }
 \source{
 <http://atlas.gs.washington.edu/mouse-rna/>

@@ -5,7 +5,7 @@
 \alias{ref_tabula_muris_facs}
 \title{Matrix of average gene expression per cluster from single-cell RNA-seq from Tabula Muris (SMART-Seq2).}
 \format{
-An object of class \code{matrix} with 23341 rows and 175 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 23341 rows and 175 columns.
 }
 \source{
 <https://tabula-muris.ds.czbiohub.org/>

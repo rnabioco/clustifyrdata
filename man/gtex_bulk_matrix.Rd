@@ -5,7 +5,7 @@
 \alias{gtex_bulk_matrix}
 \title{Matrix of average gene expression from GTEx recount bulk RNA seq.}
 \format{
-An object of class \code{matrix} with 25224 rows and 54 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 25224 rows and 54 columns.
 }
 \source{
 <https://www.ebi.ac.uk/ena/data/view/PRJNA75899>

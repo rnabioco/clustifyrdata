@@ -5,7 +5,7 @@
 \alias{MCA_lung_mat}
 \title{Matrix of single-cell RNA-seq cells of the lung.}
 \format{
-An object of class \code{matrix} with 17097 rows and 6940 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 17097 rows and 6940 columns.
 }
 \source{
 <https://figshare.com/s/865e694ad06d5857db4b>
