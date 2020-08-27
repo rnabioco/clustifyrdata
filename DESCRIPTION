@@ -1,6 +1,6 @@
 Package: clustifyrdata
 Title: External data sets for clustifyr
-Version: 0.2.0
+Version: 1.1.0
 Authors@R: 
     c(person(given = "Rui",
              family = "Fu",
@@ -9,7 +9,11 @@ Authors@R:
       person(given = "Jay",
              family = "Hesselberth",
              role = "aut",
-             email = "jay.hesselberth@cuanschutz.edu"))
+             email = "jay.hesselberth@cuanschutz.edu"),
+      person(given = "Sidhant",
+             family = "Puntambekar",
+             role = "ctb",
+             email = "sidhantnp@yahoo.com"))
 Description: External single-cell mRNA sequencing data sets for
     use with clustifyr <https://github.com/rnabioco/clustifyr>.
 License: MIT + file LICENSE
