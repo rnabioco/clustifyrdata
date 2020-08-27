@@ -32,18 +32,15 @@ mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/
 ids_mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_count_matrix.tsv.gz", n_max = 1, col_names = F)
 mat_Lung <- mat_Lung %>%
   column_to_rownames('X1')
-mat_Lung[1:5, 1:5]
 colnames(mat_Lung) <- ids_mat_Lung[1,] %>% unlist() %>% as.vector()
 
 meta_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_cell_metadata.tsv.gz")
-meta_Lung
 sum(colnames(mat_Lung) %in% meta_Lung$cell_type)
 ncol(mat_Lung)
 
 clustifyr::check_raw_counts(as.matrix(mat_Lung))
 
 GSE113049Normalized <- NormalizeData(mat_Lung)
-GSE113049Normalized
 
 GSE113049Ref_Matrix <- average_clusters(mat = GSE113049Normalized, metadata = meta_Lung$cell_type, if_log = FALSE, output_log = FALSE)
 ```
@@ -66,7 +63,6 @@ meta_PFC
 clustifyr::check_raw_counts(as.matrix(mat_PFC))
 
 GSE124952Normalized <- NormalizeData(mat_PFC)
-GSE124952Normalized
 
 GSE124952Ref_Matrix <- average_clusters(mat = GSE124952Normalized, metadata = meta_PFC$CellType, if_log = FALSE)
 ```
