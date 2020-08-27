@@ -53,7 +53,6 @@ library(dplyr)
 library(Seurat)
 library(clustifyr)
 library(tidyverse)
-library(here)
 
 mat_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_expression_matrix.csv.gz",  n_max = 100)
 mat_PFC <- mat_PFC %>%
