@@ -28,7 +28,7 @@ library(Seurat)
 library(clustifyr)
 library(tidyverse)
 
-mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_count_matrix.tsv.gz", skip = 1, col_names = F)
+mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_count_matrix.tsv.gz", skip = 1, col_names = F, n_max = 100)
 ids_mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_count_matrix.tsv.gz", n_max = 1, col_names = F)
 mat_Lung <- mat_Lung %>%
   column_to_rownames('X1')
@@ -53,7 +53,7 @@ library(clustifyr)
 library(tidyverse)
 library(here)
 
-mat_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_expression_matrix.csv.gz")
+mat_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_expression_matrix.csv.gz",  n_max = 100)
 mat_PFC <- mat_PFC %>%
   column_to_rownames('X1')
 
