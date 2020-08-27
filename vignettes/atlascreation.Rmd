@@ -1,0 +1,96 @@
+---
+title: "Concatenating multiple references"
+author: "Sidhant Puntambekar"
+date: "8/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+```
+
+## Research Focus
+
+Annotation of Single Cell RNA-sequencing experiments can be difficult given the lack of functional metadata and the various formats of presenting a processed counts matrix. The NCBI Gene Expression Omnibus (GEO) database currently contains the largest amount of publicly available scRNA-seq data for researchers. This vignette focuses on creation of a single cell atlas for a mouse organism with cell types originating from NCBI GEO records. The goal is to not only account for the maximum number of cell types possible from NCBI GEO but also to include different representations/treatments of the same cell. A single cell atlas for mice organisms would boost the efficacy of clustifyr since it would be able to give accurate benchmarks of cell types from any novel scRNA-seq experiment without proper metadata and cell type annotation. 
+
+## Generating Reference Matrices
+
+Individual reference matrices can be generated which show average gene expression values per individual cell type from a scRNA-seq experiment. In order to generate the reference matrices, the processed data from GEO such as the counts matrix and metadata table will be loaded in. The counts matrix will be checked for containing raw counts (counts matrix may have been previously log or scalar normalized). This is done with the help of a `check_raw_counts()` function. After the counts matrix is checked to contain raw counts, the data will be normalized with the help of the `NormalizeData()` function from Seurat. From there, the counts matrix and metadata table will be inputted as arguments into the clustifyr function `average_clusters()` which will output the reference matrix. The matrix can then be stored into an RDS file.
+
+The `check_raw_counts()` function takes in a valid gene expression counts matrix and a constant max_log_value of 50. It works by checking all of the values in the gene expression matrix for integers indicating that it is raw counts matrix. However, if doubles are found, a new series of checks begin. If a counts value appears to be greater than the max_log_value, the matrix may be considered scalar normalized and if there is no value greater than the max_log_value and the counts matrix contains doubles, it is considered to be log normalized. 
+
+For this vignette, two average gene expression reference matrices will be generated and concatenated into a small reference matrix. The studies used will be GSE113049 (Single Cell RNA Sequencing Identifies TGFβ as a Key Regenerative Cue following LPS-induced Lung Injury) and GSE124952 (Cell type-specific transcriptional programs in mouse prefrontal cortex during adolescence and addiction). 
+
+```{r Reference Matrix Generation GSE113049}
+#An example of reference matrix generation for GEO record GSE113049
+library(dplyr)
+library(Seurat)
+library(clustifyr)
+library(tidyverse)
+
+mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_count_matrix.tsv.gz", skip = 1, col_names = F, n_max = 100)
+ids_mat_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_count_matrix.tsv.gz", n_max = 1, col_names = F)
+mat_Lung <- mat_Lung %>%
+  column_to_rownames('X1')
+colnames(mat_Lung) <- ids_mat_Lung[1,] %>% unlist() %>% as.vector()
+
+meta_Lung <- read_tsv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE113nnn/GSE113049/suppl/GSE113049_cell_metadata.tsv.gz")
+sum(colnames(mat_Lung) %in% meta_Lung$cell_type)
+ncol(mat_Lung)
+
+clustifyr::check_raw_counts(as.matrix(mat_Lung))
+
+GSE113049Normalized <- NormalizeData(mat_Lung)
+
+GSE113049Ref_Matrix <- average_clusters(mat = GSE113049Normalized, metadata = meta_Lung$cell_type, if_log = FALSE, output_log = FALSE)
+```
+
+```{r Reference Matrix Generation GSE124952}
+#An example of reference matrix generation for GEO record GSE124952
+library(dplyr)
+library(Seurat)
+library(clustifyr)
+library(tidyverse)
+
+mat_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_expression_matrix.csv.gz",  n_max = 100)
+mat_PFC <- mat_PFC %>%
+  column_to_rownames('X1')
+
+meta_PFC <- read_csv("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE124nnn/GSE124952/suppl/GSE124952_meta_data.csv.gz")
+meta_PFC
+
+clustifyr::check_raw_counts(as.matrix(mat_PFC))
+
+GSE124952Normalized <- NormalizeData(mat_PFC)
+
+GSE124952Ref_Matrix <- average_clusters(mat = GSE124952Normalized, metadata = meta_PFC$CellType, if_log = FALSE)
+```
+
+## Concatenating Reference Matrices into Cell Atlas
+
+Once the individual reference matrices are generated, they can be concatenated into a single cell atlas encompassing all cells in an organism. In this case, all of the reference matrices are stored as RDS files in separate folder. In order to combine them, the union of all genes from a mice organism and genes present in the reference matrices will be applied. This will ensure that the reference matrices are all of the same row length which will make them easy to combine with a function such as `cbind()`. The union will be found with the `append_genes()` function and the atlas will be built with the `build_atlas()` function. 
+
+The `append_genes()` function inputs a character vector with the list of all mouse genes and an average gene expression reference matrix. The row names of the average gene expression matrix will be found using `rownames()` R function. In order to figure out which gene names are missing from the reference matrix, the `setdiff()` function will be utilized. All of the missing genes will be added to a zero reference matrix (all of the missing genes will be assigned average gene expression values of zero). The zero expression matrix and the reference matrix will then be merged with the `rbind()` function. A final re-ordering of gene names will be done and then the full matrix will be returned. The output should be a reference matrix with the same number of rows as the mouse gene character vector. 
+
+The `build_atlas()` function inputs a character vector of paths to study matrices stored as .rds files (matrix_fns), a text file with a single column containing genes and the ordering desired in the output matrix (genes_fn) and a constant output filename. In the function, it is set to a default `NULL`. The contents of gene_fn is read into a gene name character vector for later use. The reference matrices are then read with the help of matrix_fns and `readRDS()` (reference matrices can be stored as .rds files). Over the list of collected reference matrices, the `append_genes()` function will be run which will elongate all reference matrices into a reference matrix that has the same number of rows as the mouse gene vector. The relevant study names for each cell type column name will then be pasted and the reference matrices will be concatenated into a single gene expression atlas matrix. The matrix will then be stored in a separate directory called "atlas".   
+
+The following code will demonstrate the concatenation of the GSE113049 and GSE124952 reference matrices into a cell atlas. 
+```{r Building atlas with reference matrices}
+library(dplyr)
+library(Seurat)
+library(clustifyr)
+library(tidyverse)
+library(readr)
+
+# path to mouse genes
+mouse_genes_fn <- clustifyr::mouse_genes_10x
+references_to_combine <- list(GSE113049Ref_Matrix, GSE124952Ref_Matrix)
+smallAtlas <- clustifyr::build_atlas(NULL, human_genes_10x, references_to_combine, NULL)
+```
+
+## Atlas Utility
+The mouse cell atlas created using the GEO records and the Tabula Muris Cell atlas totaled 321 cell types. The inferences using clustifyr were observed to assign general cell types for major cell groups. However, more specific annotations were not possible due to the relatively small amount of cell types available. Next steps for the atlas would be to integrate a larger quantity of cell types but also different representations of the same cell types. This would allow the atlas to work correctly for benchmarking any new scRNA-seq data. 
+
+The reference matrices, R code, and utility functions (`check_raw_counts()`, `append_genes()`, and `build_atlas()`) can be found at the following link: https://github.com/rnabioco/scRNA-seq-Cell-Ref-Matrix. The full mouse atlas can be found at: https://github.com/rnabioco/scRNA-seq-Cell-Ref-Matrix/blob/master/atlas/musMusculus/MouseAtlas.rds. 
