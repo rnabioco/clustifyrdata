@@ -25,14 +25,13 @@ Imports:
     utils,
     tibble
 Suggests:
-    dplyr,
     clustifyr,
     Seurat,
     usethis,
     rmarkdown,
     knitr,
     M3Drop,
-    tidyr,
+    tidyverse,
     ComplexHeatmap
 VignetteBuilder: 
     knitr
