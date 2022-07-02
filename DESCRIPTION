@@ -20,7 +20,7 @@ License: MIT + file LICENSE
 URL: https://rnabioco.github.io/clustifyrdata,
     http://github.com/rnabioco/clustifyrdata,
 Depends:
-    R (>= 3.6.0)
+    R (>= 4.0.0)
 Imports:
     utils,
     tibble
@@ -43,3 +43,6 @@ LazyData: true
 RoxygenNote: 7.1.0
 biocViews: SingleCellData, Annotation, Sequencing, Microarray, ExperimentHub
 BugReports: https://github.com/rnabioco/clustifyrdata/issues
+Config/Needs/website:
+    pkgdown,
+    rnabioco/rbitemplate

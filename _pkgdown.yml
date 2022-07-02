@@ -2,6 +2,10 @@ url: https://rnabioco.github.io/clustifyrdata
 
 development:
   mode: auto
+  
+template:
+  package: rbitemplate
+  bootstrap: 5
 
 home:
   links:
