@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/rnabioco/clustifyrdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rnabioco/clustifyrdata/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-clustifyrdata provides `r length(tools::list_files_with_type("data", type = "data"))` external data sets for cell-type assignment with [clustifyr](https://rnabioco.github.io/clustifyr) and [reproducible scripts](https://github.com/rnabioco/clustifyrdata/tree/main/data-raw) to build data objects.
+clustifyrdata provides `r length(tools::list_files_with_type("data", type = "data"))` external data sets for cell-type assignment with [clustifyr](https://rnabioco.github.io/clustifyr/) and [reproducible scripts](https://github.com/rnabioco/clustifyrdata/tree/main/data-raw) to build data objects.
 
 ## Commonly used references:
 
