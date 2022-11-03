@@ -5,8 +5,7 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/rnabioco/clustifyrdata/workflows/R-CMD-check/badge.svg)](https://github.com/rnabioco/clustifyrdata/actions)
+[![R-CMD-check](https://github.com/rnabioco/clustifyrdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rnabioco/clustifyrdata/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 clustifyrdata provides 42 external data sets for cell-type assignment
@@ -37,8 +36,9 @@ Additionally these datasets will be made available as a Bioconductor
 ExperimentHub
 ([`clustifyrdatahub`](https://github.com/rnabioco/clustifyrdatahub))
 
-Data sets have uniform suffixes: - `ref_*` : the prebuilt reference
-expression matrix.
+Data sets have uniform prefixes / suffixes:
+
+-   `ref_*` : the prebuilt reference expression matrix.
 
 -   `*_matrix` : single-cell RNA expression matrix.
 
@@ -63,6 +63,6 @@ expression matrix.
 uncompressed).**
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("rnabioco/clustifyrdata")
+# install.packages("pak")
+pak::pkg_install("rnabioco/clustifyrdata")
 ```

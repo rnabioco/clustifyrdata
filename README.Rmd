@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # clustifyrdata
 
 <!-- badges: start -->
-[![R build status](https://github.com/rnabioco/clustifyrdata/workflows/R-CMD-check/badge.svg)](https://github.com/rnabioco/clustifyrdata/actions)
+[![R-CMD-check](https://github.com/rnabioco/clustifyrdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rnabioco/clustifyrdata/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 clustifyrdata provides `r length(tools::list_files_with_type("data", type = "data"))` external data sets for cell-type assignment with [clustifyr](https://rnabioco.github.io/clustifyr) and [reproducible scripts](https://github.com/rnabioco/clustifyrdata/tree/main/data-raw) to build data objects.
@@ -29,7 +29,8 @@ knitr::kable(clustifyrdata::downrefs)
 
 See the [reference page](https://rnabioco.github.io/clustifyrdata/reference) for available data sets, and [individual ref download page](https://rnabioco.github.io/clustifyrdata/articles/download_refs.html). Additionally these datasets will be made available as a Bioconductor ExperimentHub ([`clustifyrdatahub`](https://github.com/rnabioco/clustifyrdatahub))
 
-Data sets have uniform suffixes:
+Data sets have uniform prefixes / suffixes:
+
 - `ref_*` : the prebuilt reference expression matrix.
 
 - `*_matrix` : single-cell RNA expression matrix.
@@ -49,6 +50,6 @@ Data sets have uniform suffixes:
 **N.B.: clustifyrdata is a large data package (nearly 350 Mb uncompressed).**
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("rnabioco/clustifyrdata")
+# install.packages("pak")
+pak::pkg_install("rnabioco/clustifyrdata")
 ```
