@@ -3,6 +3,9 @@
 
 # clustifyrdata
 
+!!!! **This repository has been archived.** Please see
+[clustifyrdatahub](https://github.com/rnabioco/clustifyrdatahub). !!!!
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/rnabioco/clustifyrdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rnabioco/clustifyrdata/actions/workflows/R-CMD-check.yaml)
